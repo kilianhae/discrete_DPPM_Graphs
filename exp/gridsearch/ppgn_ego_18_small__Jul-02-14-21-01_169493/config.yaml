@@ -1,0 +1,81 @@
+dataset:
+  dataset_size: 200
+  max_node_num: 18
+  name: ego_18_small
+dev: !!python/object/apply:torch.device
+- cuda
+dropout: 1.0e-06
+eval_from: 2
+exp_dir: exp
+exp_name: gridsearch
+finalinterval: 1
+folder_name: ppgn_ego_18_small__Jul-02-14-21-01_169493
+hidden: 128
+hidden_final: 128
+linear: true
+mcmc:
+  eps:
+  - 0.1
+  - 1.0
+  fixed_node_number: true
+  grad_step_size:
+  - 0.05
+  - 0.005
+  - 0.0005
+  name: langevin
+  step_num: 1000
+model:
+  models:
+    model_1:
+      channel_num_list:
+      - 2
+      - 4
+      - 4
+      - 4
+      - 2
+      dropout_p: 0.0
+      feature_nums:
+      - 16
+      - 16
+      - 16
+      - 16
+      - 16
+      gnn_hidden_num_list:
+      - 16
+      - 16
+      - 16
+      - 16
+      name: ppgn
+      use_norm_layers: false
+  name: ppgn
+  stack_num: 1
+model_save_dir: exp/gridsearch/ppgn_ego_18_small__Jul-02-14-21-01_169493/models
+n_nodes: 30
+noise_mlp: false
+noisetype: switched
+normalization: instance
+num_layers: 8
+num_levels:
+- 64
+run_id: '169493'
+sample:
+  batch_size: 32
+samplesize: 128
+save_dir: exp/gridsearch/ppgn_ego_18_small__Jul-02-14-21-01_169493
+seed: 1234
+test:
+  batch_size: 32
+  split: 0.2
+train:
+  batch_size: 64
+  lr_dacey: 0.999
+  lr_init: 0.001
+  max_epoch: 5000
+  momentum: 0.9
+  sample_interval: 1
+  save_interval: 1
+  shuffle: true
+  sigmas: None
+  weight_decay: 0.0
+weighted: true
+weighted_loss: true

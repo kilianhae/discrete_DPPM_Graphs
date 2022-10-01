@@ -1,0 +1,10 @@
+| 07-01 16:35:54 load dataset: planar_60_200_pkl
+200
+Traceback (most recent call last):
+  File "/usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/ppgn_vlb.py", line 521, in <module>
+    train_main(config_dict, args)
+  File "/usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/ppgn_vlb.py", line 502, in train_main
+    fit(model, optimizer, None, train_dl,
+  File "/usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/ppgn_vlb.py", line 177, in fit
+    lastmmd[noisenum]={"degree": 0, "cluster": 0}
+NameError: name 'lastmmd' is not defined

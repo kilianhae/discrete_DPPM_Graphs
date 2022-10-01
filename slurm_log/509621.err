@@ -1,0 +1,51 @@
+#!/bin/bash -v
+#SBATCH --job-name=my_job
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=16G
+#SBATCH --nodes=1
+#SBATCH --account=tik-highmem
+#SBATCH --gres=gpu:1
+#SBATCH --mail-type=ALL                           # mail configuration: NONE, BEGIN, END, FAIL, REQUEUE, ALL
+#SBATCH --output=slurm_log/%j.out                 # where to store the output ( %j is the JOBID )
+#SBATCH --error=slurm_log/%j.err                  # where to store error messages SBATCH --constraint='tesla_v100|geforce_rtx_3090'
+
+/bin/echo Running on host: `hostname`
+/bin/echo In directory: `/itet-stor/khaefeli/net_scratch/khaefeli_graph_ddpm/GraphScoreMatching_ddpm_discrete/GraphScoreMatching_ppgn`
+/scratch/slurm/spool/job509621/slurm_script: line 13: /itet-stor/khaefeli/net_scratch/khaefeli_graph_ddpm/GraphScoreMatching_ddpm_discrete/GraphScoreMatching_ppgn: Is a directory
+/bin/echo Starting on: `date`
+/bin/echo SLURM_JOB_ID: $SLURM_JOB_ID
+python3 ppgn_vlb.py -c config/gridsearch/consec_ppgn_1.7_16:37/gridsearch_ppgn_consec_planar_60_200_pkl_8,128_1_64_switched_True_1234.yaml
+wandb: Currently logged in as: khaefeli (use `wandb login --relogin` to force relogin)
+wandb: Appending key for api.wandb.ai to your netrc file: /home/khaefeli/.netrc
+wandb: wandb version 0.12.20 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.12.15
+wandb: Run data is saved locally in /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_163915-1es1mlgg
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run fancy-brook-1423
+wandb: ⭐️ View project at https://wandb.ai/khaefeli/train_ppgn_consec_gridsearch
+wandb: 🚀 View run at https://wandb.ai/khaefeli/train_ppgn_consec_gridsearch/runs/1es1mlgg
+/usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/ppgn_vlb.py:195: DeprecationWarning: This function is deprecated. Please call randint(1, 64 + 1) instead
+  sigma_ind_list = np.random.random_integers(low=1,high=config.num_levels[0],size=train_adj_b.size(0))
+Traceback (most recent call last):
+  File "/usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/ppgn_vlb.py", line 522, in <module>
+    train_main(config_dict, args)
+  File "/usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/ppgn_vlb.py", line 503, in train_main
+    fit(model, optimizer, None, train_dl,
+  File "/usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/ppgn_vlb.py", line 227, in fit
+    score_batch=model(A=train_noise_adj_b_chunked[i].unsqueeze(0).to(config.dev),node_features=train_noise_adj_b_chunked[i].to(config.dev),mask=mask.to(config.dev),noiselevel=sigma).to(config.dev)
+  File "/itet-stor/khaefeli/net_scratch/conda_envs/SPECTRE/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/model/ppgn.py", line 172, in forward
+    out = self.forward_cat(A, node_features, mask, noiselevel)
+  File "/usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/model/ppgn.py", line 232, in forward_cat
+    u = masked_instance_norm2D(u, mask)
+  File "/usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/util/model_helper.py", line 182, in masked_instance_norm2D
+    mean = (torch.sum(x * mask, dim=[1,2]) / torch.sum(mask, dim=[1,2]))   # (N,C)
+RuntimeError: CUDA out of memory. Tried to allocate 20.00 MiB (GPU 0; 11.91 GiB total capacity; 11.13 GiB already allocated; 21.00 MiB free; 11.13 GiB reserved in total by PyTorch)
+wandb: Waiting for W&B process to finish... (failed 1). Press Control-C to abort syncing.
+wandb: - 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.016 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.019 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.019 MB uploaded (0.000 MB deduped)wandb: | 0.009 MB of 0.019 MB uploaded (0.000 MB deduped)wandb: / 0.019 MB of 0.019 MB uploaded (0.000 MB deduped)wandb: - 0.019 MB of 0.019 MB uploaded (0.000 MB deduped)wandb: \ 0.019 MB of 0.019 MB uploaded (0.000 MB deduped)wandb: | 0.019 MB of 0.019 MB uploaded (0.000 MB deduped)wandb: / 0.019 MB of 0.019 MB uploaded (0.000 MB deduped)wandb: - 0.019 MB of 0.019 MB uploaded (0.000 MB deduped)wandb: \ 0.019 MB of 0.019 MB uploaded (0.000 MB deduped)wandb:                                                                                
+wandb: Synced fancy-brook-1423: https://wandb.ai/khaefeli/train_ppgn_consec_gridsearch/runs/1es1mlgg
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20220701_163915-1es1mlgg/logs
+exit 0;

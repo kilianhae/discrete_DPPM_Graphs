@@ -1,0 +1,4434 @@
+| 07-01 16:52:26 EXPERIMENT BEGIN: 
+| 07-01 16:52:26 logging into exp/gridsearch/ppgn_ego_18_small__Jul-01-16-52-26_249285/info.log
+| 07-01 16:52:26 load dataset: ego_small
+200
+| 07-01 16:52:30 model: Powerful(
+  (activation): LeakyReLU(negative_slope=0.01)
+  (time_mlp): Sequential(
+    (0): Linear(in_features=1, out_features=4, bias=True)
+    (1): GELU()
+    (2): Linear(in_features=4, out_features=1, bias=True)
+  )
+  (in_lin): Sequential(
+    (0): Linear(in_features=2, out_features=32, bias=True)
+  )
+  (layer_cat_lin): Sequential(
+    (0): Linear(in_features=258, out_features=32, bias=True)
+  )
+  (convs): ModuleList(
+    (0): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (1): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (2): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (3): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (4): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (5): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (6): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (7): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+  )
+  (bns): ModuleList(
+    (0): None
+    (1): None
+    (2): None
+    (3): None
+    (4): None
+    (5): None
+    (6): None
+    (7): None
+  )
+  (feature_extractors): ModuleList(
+    (0): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (1): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (2): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (3): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (4): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (5): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (6): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (7): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+  )
+  (after_conv): Sequential(
+    (0): Linear(in_features=32, out_features=32, bias=True)
+  )
+  (final_lin): Sequential(
+    (0): Linear(in_features=32, out_features=1, bias=True)
+  )
+)
+| 07-01 16:52:30 Parameters: 
+time_mlp.0.weight ........................................................................................... torch.Size([4, 1])
+time_mlp.0.bias ................................................................................................ torch.Size([4])
+time_mlp.2.weight ........................................................................................... torch.Size([1, 4])
+time_mlp.2.bias ................................................................................................ torch.Size([1])
+in_lin.0.weight ............................................................................................ torch.Size([32, 2])
+in_lin.0.bias ................................................................................................. torch.Size([32])
+layer_cat_lin.0.weight ................................................................................... torch.Size([32, 258])
+layer_cat_lin.0.bias .......................................................................................... torch.Size([32])
+convs.0.m1.0.weight ....................................................................................... torch.Size([32, 32])
+convs.0.m1.0.bias ............................................................................................. torch.Size([32])
+convs.0.m1.2.weight ....................................................................................... torch.Size([32, 32])
+convs.0.m1.2.bias ............................................................................................. torch.Size([32])
+convs.0.m2.0.weight ....................................................................................... torch.Size([32, 32])
+convs.0.m2.0.bias ............................................................................................. torch.Size([32])
+convs.0.m2.2.weight ....................................................................................... torch.Size([32, 32])
+convs.0.m2.2.bias ............................................................................................. torch.Size([32])
+convs.0.m4.0.weight ....................................................................................... torch.Size([32, 64])
+convs.0.m4.0.bias ............................................................................................. torch.Size([32])
+convs.1.m1.0.weight ....................................................................................... torch.Size([32, 32])
+convs.1.m1.0.bias ............................................................................................. torch.Size([32])
+convs.1.m1.2.weight ....................................................................................... torch.Size([32, 32])
+convs.1.m1.2.bias ............................................................................................. torch.Size([32])
+convs.1.m2.0.weight ....................................................................................... torch.Size([32, 32])
+convs.1.m2.0.bias ............................................................................................. torch.Size([32])
+convs.1.m2.2.weight ....................................................................................... torch.Size([32, 32])
+convs.1.m2.2.bias ............................................................................................. torch.Size([32])
+convs.1.m4.0.weight ....................................................................................... torch.Size([32, 64])
+convs.1.m4.0.bias ............................................................................................. torch.Size([32])
+convs.2.m1.0.weight ....................................................................................... torch.Size([32, 32])
+convs.2.m1.0.bias ............................................................................................. torch.Size([32])
+convs.2.m1.2.weight ....................................................................................... torch.Size([32, 32])
+convs.2.m1.2.bias ............................................................................................. torch.Size([32])
+convs.2.m2.0.weight ....................................................................................... torch.Size([32, 32])
+convs.2.m2.0.bias ............................................................................................. torch.Size([32])
+convs.2.m2.2.weight ....................................................................................... torch.Size([32, 32])
+convs.2.m2.2.bias ............................................................................................. torch.Size([32])
+convs.2.m4.0.weight ....................................................................................... torch.Size([32, 64])
+convs.2.m4.0.bias ............................................................................................. torch.Size([32])
+convs.3.m1.0.weight ....................................................................................... torch.Size([32, 32])
+convs.3.m1.0.bias ............................................................................................. torch.Size([32])
+convs.3.m1.2.weight ....................................................................................... torch.Size([32, 32])
+convs.3.m1.2.bias ............................................................................................. torch.Size([32])
+convs.3.m2.0.weight ....................................................................................... torch.Size([32, 32])
+convs.3.m2.0.bias ............................................................................................. torch.Size([32])
+convs.3.m2.2.weight ....................................................................................... torch.Size([32, 32])
+convs.3.m2.2.bias ............................................................................................. torch.Size([32])
+convs.3.m4.0.weight ....................................................................................... torch.Size([32, 64])
+convs.3.m4.0.bias ............................................................................................. torch.Size([32])
+convs.4.m1.0.weight ....................................................................................... torch.Size([32, 32])
+convs.4.m1.0.bias ............................................................................................. torch.Size([32])
+convs.4.m1.2.weight ....................................................................................... torch.Size([32, 32])
+convs.4.m1.2.bias ............................................................................................. torch.Size([32])
+convs.4.m2.0.weight ....................................................................................... torch.Size([32, 32])
+convs.4.m2.0.bias ............................................................................................. torch.Size([32])
+convs.4.m2.2.weight ....................................................................................... torch.Size([32, 32])
+convs.4.m2.2.bias ............................................................................................. torch.Size([32])
+convs.4.m4.0.weight ....................................................................................... torch.Size([32, 64])
+convs.4.m4.0.bias ............................................................................................. torch.Size([32])
+convs.5.m1.0.weight ....................................................................................... torch.Size([32, 32])
+convs.5.m1.0.bias ............................................................................................. torch.Size([32])
+convs.5.m1.2.weight ....................................................................................... torch.Size([32, 32])
+convs.5.m1.2.bias ............................................................................................. torch.Size([32])
+convs.5.m2.0.weight ....................................................................................... torch.Size([32, 32])
+convs.5.m2.0.bias ............................................................................................. torch.Size([32])
+convs.5.m2.2.weight ....................................................................................... torch.Size([32, 32])
+convs.5.m2.2.bias ............................................................................................. torch.Size([32])
+convs.5.m4.0.weight ....................................................................................... torch.Size([32, 64])
+convs.5.m4.0.bias ............................................................................................. torch.Size([32])
+convs.6.m1.0.weight ....................................................................................... torch.Size([32, 32])
+convs.6.m1.0.bias ............................................................................................. torch.Size([32])
+convs.6.m1.2.weight ....................................................................................... torch.Size([32, 32])
+convs.6.m1.2.bias ............................................................................................. torch.Size([32])
+convs.6.m2.0.weight ....................................................................................... torch.Size([32, 32])
+convs.6.m2.0.bias ............................................................................................. torch.Size([32])
+convs.6.m2.2.weight ....................................................................................... torch.Size([32, 32])
+convs.6.m2.2.bias ............................................................................................. torch.Size([32])
+convs.6.m4.0.weight ....................................................................................... torch.Size([32, 64])
+convs.6.m4.0.bias ............................................................................................. torch.Size([32])
+convs.7.m1.0.weight ....................................................................................... torch.Size([32, 32])
+convs.7.m1.0.bias ............................................................................................. torch.Size([32])
+convs.7.m1.2.weight ....................................................................................... torch.Size([32, 32])
+convs.7.m1.2.bias ............................................................................................. torch.Size([32])
+convs.7.m2.0.weight ....................................................................................... torch.Size([32, 32])
+convs.7.m2.0.bias ............................................................................................. torch.Size([32])
+convs.7.m2.2.weight ....................................................................................... torch.Size([32, 32])
+convs.7.m2.2.bias ............................................................................................. torch.Size([32])
+convs.7.m4.0.weight ....................................................................................... torch.Size([32, 64])
+convs.7.m4.0.bias ............................................................................................. torch.Size([32])
+feature_extractors.0.lin1.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.0.lin1.0.bias .............................................................................. torch.Size([32])
+feature_extractors.0.lin2.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.0.lin3.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.1.lin1.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.1.lin1.0.bias .............................................................................. torch.Size([32])
+feature_extractors.1.lin2.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.1.lin3.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.2.lin1.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.2.lin1.0.bias .............................................................................. torch.Size([32])
+feature_extractors.2.lin2.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.2.lin3.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.3.lin1.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.3.lin1.0.bias .............................................................................. torch.Size([32])
+feature_extractors.3.lin2.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.3.lin3.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.4.lin1.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.4.lin1.0.bias .............................................................................. torch.Size([32])
+feature_extractors.4.lin2.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.4.lin3.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.5.lin1.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.5.lin1.0.bias .............................................................................. torch.Size([32])
+feature_extractors.5.lin2.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.5.lin3.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.6.lin1.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.6.lin1.0.bias .............................................................................. torch.Size([32])
+feature_extractors.6.lin2.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.6.lin3.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.7.lin1.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.7.lin1.0.bias .............................................................................. torch.Size([32])
+feature_extractors.7.lin2.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.7.lin3.0.weight ........................................................................ torch.Size([32, 32])
+after_conv.0.weight ....................................................................................... torch.Size([32, 32])
+after_conv.0.bias ............................................................................................. torch.Size([32])
+final_lin.0.weight ......................................................................................... torch.Size([1, 32])
+final_lin.0.bias ............................................................................................... torch.Size([1])
+| 07-01 16:52:30 Parameters Count: 84750, Trainable: 84750
+| 07-01 16:52:47 load dataset: ego_small
+200
+| 07-01 16:52:54 epoch: 000| time: 6.7s| train loss: +1.167e+02 | test loss: +1.428e+02 | 
+| 07-01 16:52:54 epoch: 000| train loss i: nan test loss i: nan | 
+| 07-01 16:52:54 epoch: 000| time: 6.7s| train loss: +1.167e+02 | test loss: +1.428e+02 | 
+| 07-01 16:52:54 epoch: 000| train loss i: nan test loss i: nan | 
+| 07-01 16:53:04 epoch: 001| time: 9.5s| train loss: +5.628e+01 | test loss: +6.640e+01 | 
+| 07-01 16:53:04 epoch: 001| train loss i: nan test loss i: nan | 
+| 07-01 16:53:04 epoch: 001| time: 9.6s| train loss: +5.628e+01 | test loss: +6.640e+01 | 
+| 07-01 16:53:04 epoch: 001| train loss i: nan test loss i: nan | 
+| 07-01 16:53:14 epoch: 002| time: 10.6s| train loss: +9.025e+01 | test loss: +4.740e+01 | 
+| 07-01 16:53:14 epoch: 002| train loss i: nan test loss i: nan | 
+| 07-01 16:53:14 epoch: 002| time: 10.7s| train loss: +9.025e+01 | test loss: +4.740e+01 | 
+| 07-01 16:53:14 epoch: 002| train loss i: nan test loss i: nan | 
+| 07-01 16:55:00 epoch: 003| time: 105.9s| train loss: +7.026e+01 | test loss: +6.094e+01 | 
+| 07-01 16:55:00 epoch: 003| train loss i: nan test loss i: nan | 
+| 07-01 16:55:00 epoch: 003| time: 105.9s| train loss: +7.026e+01 | test loss: +6.094e+01 | 
+| 07-01 16:55:00 epoch: 003| train loss i: nan test loss i: nan | 
+| 07-01 16:55:00 model: Powerful(
+  (activation): LeakyReLU(negative_slope=0.01)
+  (time_mlp): Sequential(
+    (0): Linear(in_features=1, out_features=4, bias=True)
+    (1): GELU()
+    (2): Linear(in_features=4, out_features=1, bias=True)
+  )
+  (in_lin): Sequential(
+    (0): Linear(in_features=2, out_features=32, bias=True)
+  )
+  (layer_cat_lin): Sequential(
+    (0): Linear(in_features=258, out_features=32, bias=True)
+  )
+  (convs): ModuleList(
+    (0): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (1): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (2): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (3): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (4): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (5): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (6): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (7): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+  )
+  (bns): ModuleList(
+    (0): None
+    (1): None
+    (2): None
+    (3): None
+    (4): None
+    (5): None
+    (6): None
+    (7): None
+  )
+  (feature_extractors): ModuleList(
+    (0): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (1): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (2): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (3): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (4): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (5): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (6): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (7): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+  )
+  (after_conv): Sequential(
+    (0): Linear(in_features=32, out_features=32, bias=True)
+  )
+  (final_lin): Sequential(
+    (0): Linear(in_features=32, out_features=1, bias=True)
+  )
+)
+| 07-01 17:01:15 load dataset: ego_small
+200
+| 07-01 17:01:15 model: Powerful(
+  (activation): LeakyReLU(negative_slope=0.01)
+  (time_mlp): Sequential(
+    (0): Linear(in_features=1, out_features=4, bias=True)
+    (1): GELU()
+    (2): Linear(in_features=4, out_features=1, bias=True)
+  )
+  (in_lin): Sequential(
+    (0): Linear(in_features=2, out_features=32, bias=True)
+  )
+  (layer_cat_lin): Sequential(
+    (0): Linear(in_features=258, out_features=32, bias=True)
+  )
+  (convs): ModuleList(
+    (0): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (1): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (2): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (3): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (4): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (5): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (6): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (7): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+  )
+  (bns): ModuleList(
+    (0): None
+    (1): None
+    (2): None
+    (3): None
+    (4): None
+    (5): None
+    (6): None
+    (7): None
+  )
+  (feature_extractors): ModuleList(
+    (0): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (1): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (2): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (3): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (4): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (5): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (6): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (7): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+  )
+  (after_conv): Sequential(
+    (0): Linear(in_features=32, out_features=32, bias=True)
+  )
+  (final_lin): Sequential(
+    (0): Linear(in_features=32, out_features=1, bias=True)
+  )
+)
+| 07-01 17:02:59 load dataset: ego_small
+200
+| 07-01 17:02:59 model: Powerful(
+  (activation): LeakyReLU(negative_slope=0.01)
+  (time_mlp): Sequential(
+    (0): Linear(in_features=1, out_features=4, bias=True)
+    (1): GELU()
+    (2): Linear(in_features=4, out_features=1, bias=True)
+  )
+  (in_lin): Sequential(
+    (0): Linear(in_features=2, out_features=32, bias=True)
+  )
+  (layer_cat_lin): Sequential(
+    (0): Linear(in_features=258, out_features=32, bias=True)
+  )
+  (convs): ModuleList(
+    (0): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (1): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (2): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (3): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (4): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (5): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (6): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (7): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+  )
+  (bns): ModuleList(
+    (0): None
+    (1): None
+    (2): None
+    (3): None
+    (4): None
+    (5): None
+    (6): None
+    (7): None
+  )
+  (feature_extractors): ModuleList(
+    (0): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (1): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (2): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (3): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (4): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (5): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (6): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (7): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+  )
+  (after_conv): Sequential(
+    (0): Linear(in_features=32, out_features=32, bias=True)
+  )
+  (final_lin): Sequential(
+    (0): Linear(in_features=32, out_features=1, bias=True)
+  )
+)
+| 07-01 17:04:43 load dataset: ego_small
+200
+| 07-01 17:04:43 model: Powerful(
+  (activation): LeakyReLU(negative_slope=0.01)
+  (time_mlp): Sequential(
+    (0): Linear(in_features=1, out_features=4, bias=True)
+    (1): GELU()
+    (2): Linear(in_features=4, out_features=1, bias=True)
+  )
+  (in_lin): Sequential(
+    (0): Linear(in_features=2, out_features=32, bias=True)
+  )
+  (layer_cat_lin): Sequential(
+    (0): Linear(in_features=258, out_features=32, bias=True)
+  )
+  (convs): ModuleList(
+    (0): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (1): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (2): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (3): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (4): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (5): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (6): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (7): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+  )
+  (bns): ModuleList(
+    (0): None
+    (1): None
+    (2): None
+    (3): None
+    (4): None
+    (5): None
+    (6): None
+    (7): None
+  )
+  (feature_extractors): ModuleList(
+    (0): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (1): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (2): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (3): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (4): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (5): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (6): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (7): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+  )
+  (after_conv): Sequential(
+    (0): Linear(in_features=32, out_features=32, bias=True)
+  )
+  (final_lin): Sequential(
+    (0): Linear(in_features=32, out_features=1, bias=True)
+  )
+)
+| 07-01 17:06:26 load dataset: ego_small
+200
+| 07-01 17:06:26 model: Powerful(
+  (activation): LeakyReLU(negative_slope=0.01)
+  (time_mlp): Sequential(
+    (0): Linear(in_features=1, out_features=4, bias=True)
+    (1): GELU()
+    (2): Linear(in_features=4, out_features=1, bias=True)
+  )
+  (in_lin): Sequential(
+    (0): Linear(in_features=2, out_features=32, bias=True)
+  )
+  (layer_cat_lin): Sequential(
+    (0): Linear(in_features=258, out_features=32, bias=True)
+  )
+  (convs): ModuleList(
+    (0): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (1): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (2): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (3): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (4): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (5): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (6): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (7): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+  )
+  (bns): ModuleList(
+    (0): None
+    (1): None
+    (2): None
+    (3): None
+    (4): None
+    (5): None
+    (6): None
+    (7): None
+  )
+  (feature_extractors): ModuleList(
+    (0): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (1): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (2): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (3): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (4): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (5): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (6): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (7): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+  )
+  (after_conv): Sequential(
+    (0): Linear(in_features=32, out_features=32, bias=True)
+  )
+  (final_lin): Sequential(
+    (0): Linear(in_features=32, out_features=1, bias=True)
+  )
+)
+| 07-01 17:09:49 epoch: 004| time: 101.0s| train loss: +5.866e+01 | test loss: +4.802e+01 | 
+| 07-01 17:09:49 epoch: 004| train loss i: nan test loss i: nan | 
+| 07-01 17:09:49 epoch: 004| time: 101.0s| train loss: +5.866e+01 | test loss: +4.802e+01 | 
+| 07-01 17:09:49 epoch: 004| train loss i: nan test loss i: nan | 
+| 07-01 17:09:55 model: Powerful(
+  (activation): LeakyReLU(negative_slope=0.01)
+  (time_mlp): Sequential(
+    (0): Linear(in_features=1, out_features=4, bias=True)
+    (1): GELU()
+    (2): Linear(in_features=4, out_features=1, bias=True)
+  )
+  (in_lin): Sequential(
+    (0): Linear(in_features=2, out_features=32, bias=True)
+  )
+  (layer_cat_lin): Sequential(
+    (0): Linear(in_features=258, out_features=32, bias=True)
+  )
+  (convs): ModuleList(
+    (0): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (1): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (2): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (3): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (4): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (5): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (6): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (7): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+  )
+  (bns): ModuleList(
+    (0): None
+    (1): None
+    (2): None
+    (3): None
+    (4): None
+    (5): None
+    (6): None
+    (7): None
+  )
+  (feature_extractors): ModuleList(
+    (0): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (1): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (2): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (3): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (4): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (5): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (6): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (7): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+  )
+  (after_conv): Sequential(
+    (0): Linear(in_features=32, out_features=32, bias=True)
+  )
+  (final_lin): Sequential(
+    (0): Linear(in_features=32, out_features=1, bias=True)
+  )
+)
+| 07-01 17:16:28 load dataset: ego_small
+200
+| 07-01 17:16:28 model: Powerful(
+  (activation): LeakyReLU(negative_slope=0.01)
+  (time_mlp): Sequential(
+    (0): Linear(in_features=1, out_features=4, bias=True)
+    (1): GELU()
+    (2): Linear(in_features=4, out_features=1, bias=True)
+  )
+  (in_lin): Sequential(
+    (0): Linear(in_features=2, out_features=32, bias=True)
+  )
+  (layer_cat_lin): Sequential(
+    (0): Linear(in_features=258, out_features=32, bias=True)
+  )
+  (convs): ModuleList(
+    (0): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (1): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (2): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (3): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (4): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (5): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (6): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (7): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+  )
+  (bns): ModuleList(
+    (0): None
+    (1): None
+    (2): None
+    (3): None
+    (4): None
+    (5): None
+    (6): None
+    (7): None
+  )
+  (feature_extractors): ModuleList(
+    (0): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (1): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (2): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (3): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (4): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (5): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (6): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (7): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+  )
+  (after_conv): Sequential(
+    (0): Linear(in_features=32, out_features=32, bias=True)
+  )
+  (final_lin): Sequential(
+    (0): Linear(in_features=32, out_features=1, bias=True)
+  )
+)
+| 07-01 17:18:15 load dataset: ego_small
+200
+| 07-01 17:18:15 model: Powerful(
+  (activation): LeakyReLU(negative_slope=0.01)
+  (time_mlp): Sequential(
+    (0): Linear(in_features=1, out_features=4, bias=True)
+    (1): GELU()
+    (2): Linear(in_features=4, out_features=1, bias=True)
+  )
+  (in_lin): Sequential(
+    (0): Linear(in_features=2, out_features=32, bias=True)
+  )
+  (layer_cat_lin): Sequential(
+    (0): Linear(in_features=258, out_features=32, bias=True)
+  )
+  (convs): ModuleList(
+    (0): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (1): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (2): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (3): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (4): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (5): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (6): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (7): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+  )
+  (bns): ModuleList(
+    (0): None
+    (1): None
+    (2): None
+    (3): None
+    (4): None
+    (5): None
+    (6): None
+    (7): None
+  )
+  (feature_extractors): ModuleList(
+    (0): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (1): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (2): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (3): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (4): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (5): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (6): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (7): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+  )
+  (after_conv): Sequential(
+    (0): Linear(in_features=32, out_features=32, bias=True)
+  )
+  (final_lin): Sequential(
+    (0): Linear(in_features=32, out_features=1, bias=True)
+  )
+)
+| 07-01 17:20:03 load dataset: ego_small
+200
+| 07-01 17:20:03 model: Powerful(
+  (activation): LeakyReLU(negative_slope=0.01)
+  (time_mlp): Sequential(
+    (0): Linear(in_features=1, out_features=4, bias=True)
+    (1): GELU()
+    (2): Linear(in_features=4, out_features=1, bias=True)
+  )
+  (in_lin): Sequential(
+    (0): Linear(in_features=2, out_features=32, bias=True)
+  )
+  (layer_cat_lin): Sequential(
+    (0): Linear(in_features=258, out_features=32, bias=True)
+  )
+  (convs): ModuleList(
+    (0): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (1): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (2): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (3): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (4): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (5): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (6): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (7): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+  )
+  (bns): ModuleList(
+    (0): None
+    (1): None
+    (2): None
+    (3): None
+    (4): None
+    (5): None
+    (6): None
+    (7): None
+  )
+  (feature_extractors): ModuleList(
+    (0): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (1): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (2): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (3): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (4): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (5): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (6): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (7): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+  )
+  (after_conv): Sequential(
+    (0): Linear(in_features=32, out_features=32, bias=True)
+  )
+  (final_lin): Sequential(
+    (0): Linear(in_features=32, out_features=1, bias=True)
+  )
+)
+| 07-01 17:21:50 load dataset: ego_small
+200
+| 07-01 17:21:50 model: Powerful(
+  (activation): LeakyReLU(negative_slope=0.01)
+  (time_mlp): Sequential(
+    (0): Linear(in_features=1, out_features=4, bias=True)
+    (1): GELU()
+    (2): Linear(in_features=4, out_features=1, bias=True)
+  )
+  (in_lin): Sequential(
+    (0): Linear(in_features=2, out_features=32, bias=True)
+  )
+  (layer_cat_lin): Sequential(
+    (0): Linear(in_features=258, out_features=32, bias=True)
+  )
+  (convs): ModuleList(
+    (0): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (1): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (2): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (3): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (4): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (5): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (6): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (7): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+  )
+  (bns): ModuleList(
+    (0): None
+    (1): None
+    (2): None
+    (3): None
+    (4): None
+    (5): None
+    (6): None
+    (7): None
+  )
+  (feature_extractors): ModuleList(
+    (0): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (1): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (2): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (3): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (4): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (5): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (6): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (7): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+  )
+  (after_conv): Sequential(
+    (0): Linear(in_features=32, out_features=32, bias=True)
+  )
+  (final_lin): Sequential(
+    (0): Linear(in_features=32, out_features=1, bias=True)
+  )
+)
+| 07-01 17:25:16 epoch: 005| time: 98.6s| train loss: +5.014e+01 | test loss: +4.793e+01 | 
+| 07-01 17:25:16 epoch: 005| train loss i: nan test loss i: nan | 
+| 07-01 17:25:16 epoch: 005| time: 98.7s| train loss: +5.014e+01 | test loss: +4.793e+01 | 
+| 07-01 17:25:16 epoch: 005| train loss i: nan test loss i: nan | 
+| 07-01 17:25:21 model: Powerful(
+  (activation): LeakyReLU(negative_slope=0.01)
+  (time_mlp): Sequential(
+    (0): Linear(in_features=1, out_features=4, bias=True)
+    (1): GELU()
+    (2): Linear(in_features=4, out_features=1, bias=True)
+  )
+  (in_lin): Sequential(
+    (0): Linear(in_features=2, out_features=32, bias=True)
+  )
+  (layer_cat_lin): Sequential(
+    (0): Linear(in_features=258, out_features=32, bias=True)
+  )
+  (convs): ModuleList(
+    (0): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (1): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (2): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (3): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (4): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (5): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (6): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (7): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+  )
+  (bns): ModuleList(
+    (0): None
+    (1): None
+    (2): None
+    (3): None
+    (4): None
+    (5): None
+    (6): None
+    (7): None
+  )
+  (feature_extractors): ModuleList(
+    (0): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (1): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (2): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (3): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (4): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (5): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (6): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (7): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+  )
+  (after_conv): Sequential(
+    (0): Linear(in_features=32, out_features=32, bias=True)
+  )
+  (final_lin): Sequential(
+    (0): Linear(in_features=32, out_features=1, bias=True)
+  )
+)
+| 07-01 17:31:40 load dataset: ego_small
+200
+| 07-01 17:31:40 model: Powerful(
+  (activation): LeakyReLU(negative_slope=0.01)
+  (time_mlp): Sequential(
+    (0): Linear(in_features=1, out_features=4, bias=True)
+    (1): GELU()
+    (2): Linear(in_features=4, out_features=1, bias=True)
+  )
+  (in_lin): Sequential(
+    (0): Linear(in_features=2, out_features=32, bias=True)
+  )
+  (layer_cat_lin): Sequential(
+    (0): Linear(in_features=258, out_features=32, bias=True)
+  )
+  (convs): ModuleList(
+    (0): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (1): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (2): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (3): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (4): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (5): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (6): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (7): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+  )
+  (bns): ModuleList(
+    (0): None
+    (1): None
+    (2): None
+    (3): None
+    (4): None
+    (5): None
+    (6): None
+    (7): None
+  )
+  (feature_extractors): ModuleList(
+    (0): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (1): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (2): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (3): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (4): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (5): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (6): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (7): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+  )
+  (after_conv): Sequential(
+    (0): Linear(in_features=32, out_features=32, bias=True)
+  )
+  (final_lin): Sequential(
+    (0): Linear(in_features=32, out_features=1, bias=True)
+  )
+)
+| 07-01 17:33:28 load dataset: ego_small
+200
+| 07-01 17:33:28 model: Powerful(
+  (activation): LeakyReLU(negative_slope=0.01)
+  (time_mlp): Sequential(
+    (0): Linear(in_features=1, out_features=4, bias=True)
+    (1): GELU()
+    (2): Linear(in_features=4, out_features=1, bias=True)
+  )
+  (in_lin): Sequential(
+    (0): Linear(in_features=2, out_features=32, bias=True)
+  )
+  (layer_cat_lin): Sequential(
+    (0): Linear(in_features=258, out_features=32, bias=True)
+  )
+  (convs): ModuleList(
+    (0): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (1): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (2): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (3): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (4): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (5): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (6): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (7): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+  )
+  (bns): ModuleList(
+    (0): None
+    (1): None
+    (2): None
+    (3): None
+    (4): None
+    (5): None
+    (6): None
+    (7): None
+  )
+  (feature_extractors): ModuleList(
+    (0): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (1): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (2): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (3): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (4): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (5): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (6): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (7): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+  )
+  (after_conv): Sequential(
+    (0): Linear(in_features=32, out_features=32, bias=True)
+  )
+  (final_lin): Sequential(
+    (0): Linear(in_features=32, out_features=1, bias=True)
+  )
+)
+| 07-01 17:35:15 load dataset: ego_small
+200
+| 07-01 17:35:15 model: Powerful(
+  (activation): LeakyReLU(negative_slope=0.01)
+  (time_mlp): Sequential(
+    (0): Linear(in_features=1, out_features=4, bias=True)
+    (1): GELU()
+    (2): Linear(in_features=4, out_features=1, bias=True)
+  )
+  (in_lin): Sequential(
+    (0): Linear(in_features=2, out_features=32, bias=True)
+  )
+  (layer_cat_lin): Sequential(
+    (0): Linear(in_features=258, out_features=32, bias=True)
+  )
+  (convs): ModuleList(
+    (0): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (1): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (2): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (3): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (4): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (5): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (6): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (7): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+  )
+  (bns): ModuleList(
+    (0): None
+    (1): None
+    (2): None
+    (3): None
+    (4): None
+    (5): None
+    (6): None
+    (7): None
+  )
+  (feature_extractors): ModuleList(
+    (0): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (1): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (2): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (3): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (4): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (5): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (6): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (7): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+  )
+  (after_conv): Sequential(
+    (0): Linear(in_features=32, out_features=32, bias=True)
+  )
+  (final_lin): Sequential(
+    (0): Linear(in_features=32, out_features=1, bias=True)
+  )
+)
+| 07-01 17:37:01 load dataset: ego_small
+200
+| 07-01 17:37:01 model: Powerful(
+  (activation): LeakyReLU(negative_slope=0.01)
+  (time_mlp): Sequential(
+    (0): Linear(in_features=1, out_features=4, bias=True)
+    (1): GELU()
+    (2): Linear(in_features=4, out_features=1, bias=True)
+  )
+  (in_lin): Sequential(
+    (0): Linear(in_features=2, out_features=32, bias=True)
+  )
+  (layer_cat_lin): Sequential(
+    (0): Linear(in_features=258, out_features=32, bias=True)
+  )
+  (convs): ModuleList(
+    (0): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (1): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (2): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (3): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (4): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (5): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (6): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (7): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+  )
+  (bns): ModuleList(
+    (0): None
+    (1): None
+    (2): None
+    (3): None
+    (4): None
+    (5): None
+    (6): None
+    (7): None
+  )
+  (feature_extractors): ModuleList(
+    (0): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (1): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (2): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (3): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (4): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (5): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (6): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (7): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+  )
+  (after_conv): Sequential(
+    (0): Linear(in_features=32, out_features=32, bias=True)
+  )
+  (final_lin): Sequential(
+    (0): Linear(in_features=32, out_features=1, bias=True)
+  )
+)
+| 07-01 17:40:28 epoch: 006| time: 98.8s| train loss: +4.874e+01 | test loss: +4.283e+01 | 
+| 07-01 17:40:28 epoch: 006| train loss i: nan test loss i: nan | 
+| 07-01 17:40:28 epoch: 006| time: 98.8s| train loss: +4.874e+01 | test loss: +4.283e+01 | 
+| 07-01 17:40:28 epoch: 006| train loss i: nan test loss i: nan | 
+| 07-01 17:40:33 model: Powerful(
+  (activation): LeakyReLU(negative_slope=0.01)
+  (time_mlp): Sequential(
+    (0): Linear(in_features=1, out_features=4, bias=True)
+    (1): GELU()
+    (2): Linear(in_features=4, out_features=1, bias=True)
+  )
+  (in_lin): Sequential(
+    (0): Linear(in_features=2, out_features=32, bias=True)
+  )
+  (layer_cat_lin): Sequential(
+    (0): Linear(in_features=258, out_features=32, bias=True)
+  )
+  (convs): ModuleList(
+    (0): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (1): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (2): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (3): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (4): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (5): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (6): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (7): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+  )
+  (bns): ModuleList(
+    (0): None
+    (1): None
+    (2): None
+    (3): None
+    (4): None
+    (5): None
+    (6): None
+    (7): None
+  )
+  (feature_extractors): ModuleList(
+    (0): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (1): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (2): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (3): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (4): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (5): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (6): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (7): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+  )
+  (after_conv): Sequential(
+    (0): Linear(in_features=32, out_features=32, bias=True)
+  )
+  (final_lin): Sequential(
+    (0): Linear(in_features=32, out_features=1, bias=True)
+  )
+)

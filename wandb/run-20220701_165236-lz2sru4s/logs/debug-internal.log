@@ -1,0 +1,718 @@
+2022-07-01 16:52:38,357 INFO    MainThread:249336 [internal.py:wandb_internal():90] W&B internal server running at pid: 249336, started at: 2022-07-01 16:52:38.355772
+2022-07-01 16:52:38,359 INFO    WriterThread:249336 [datastore.py:open_for_write():75] open: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/run-lz2sru4s.wandb
+2022-07-01 16:52:38,363 DEBUG   SenderThread:249336 [sender.py:send():232] send: header
+2022-07-01 16:52:38,363 DEBUG   SenderThread:249336 [sender.py:send():232] send: run
+2022-07-01 16:52:41,629 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: check_version
+2022-07-01 16:52:41,641 INFO    SenderThread:249336 [dir_watcher.py:__init__():166] watching files in: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files
+2022-07-01 16:52:41,641 INFO    SenderThread:249336 [sender.py:_start_run_threads():811] run started: lz2sru4s with start time 1656687156
+2022-07-01 16:52:41,641 DEBUG   SenderThread:249336 [sender.py:send():232] send: summary
+2022-07-01 16:52:41,643 INFO    SenderThread:249336 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-07-01 16:52:41,643 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: check_version
+2022-07-01 16:52:42,644 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_created():213] file/dir created: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/wandb-summary.json
+2022-07-01 16:52:42,742 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: run_start
+2022-07-01 16:52:42,748 DEBUG   HandlerThread:249336 [meta.py:__init__():35] meta init
+2022-07-01 16:52:42,748 DEBUG   HandlerThread:249336 [meta.py:__init__():49] meta init done
+2022-07-01 16:52:42,748 DEBUG   HandlerThread:249336 [meta.py:probe():209] probe
+2022-07-01 16:52:42,756 DEBUG   HandlerThread:249336 [meta.py:_setup_git():199] setup git
+2022-07-01 16:52:42,782 DEBUG   HandlerThread:249336 [meta.py:_setup_git():206] setup git done
+2022-07-01 16:52:42,782 DEBUG   HandlerThread:249336 [meta.py:_save_pip():53] save pip
+2022-07-01 16:52:42,786 DEBUG   HandlerThread:249336 [meta.py:_save_pip():67] save pip done
+2022-07-01 16:52:42,786 DEBUG   HandlerThread:249336 [meta.py:_save_conda():74] save conda
+2022-07-01 16:52:43,649 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_created():213] file/dir created: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/requirements.txt
+2022-07-01 16:52:43,650 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_created():213] file/dir created: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/conda-environment.yaml
+2022-07-01 16:52:47,889 DEBUG   HandlerThread:249336 [meta.py:_save_conda():84] save conda done
+2022-07-01 16:52:47,889 DEBUG   HandlerThread:249336 [meta.py:probe():247] probe done
+2022-07-01 16:52:48,096 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:52:48,096 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:52:48,550 DEBUG   SenderThread:249336 [sender.py:send():232] send: telemetry
+2022-07-01 16:52:48,551 DEBUG   SenderThread:249336 [sender.py:send():232] send: files
+2022-07-01 16:52:48,551 INFO    SenderThread:249336 [sender.py:_save_file():946] saving file wandb-metadata.json with policy now
+2022-07-01 16:52:48,664 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/conda-environment.yaml
+2022-07-01 16:52:48,664 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_created():213] file/dir created: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/wandb-metadata.json
+2022-07-01 16:52:48,664 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_created():213] file/dir created: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 16:52:50,668 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 16:52:52,672 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 16:52:54,661 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-01 16:52:54,663 DEBUG   SenderThread:249336 [sender.py:send():232] send: history
+2022-07-01 16:52:54,663 DEBUG   SenderThread:249336 [sender.py:send():232] send: summary
+2022-07-01 16:52:54,666 INFO    SenderThread:249336 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-07-01 16:52:54,674 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/wandb-summary.json
+2022-07-01 16:52:55,159 INFO    Thread-11 :249336 [upload_job.py:push():137] Uploaded file /tmp/tmpqhfsz_llwandb/3hjesaq1-wandb-metadata.json
+2022-07-01 16:52:56,693 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 16:53:03,555 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:53:03,557 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:53:04,217 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-01 16:53:04,218 DEBUG   SenderThread:249336 [sender.py:send():232] send: history
+2022-07-01 16:53:04,218 DEBUG   SenderThread:249336 [sender.py:send():232] send: summary
+2022-07-01 16:53:04,222 INFO    SenderThread:249336 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-07-01 16:53:04,709 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/wandb-summary.json
+2022-07-01 16:53:08,726 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 16:53:09,730 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/config.yaml
+2022-07-01 16:53:11,463 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 16:53:14,898 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-01 16:53:14,899 DEBUG   SenderThread:249336 [sender.py:send():232] send: history
+2022-07-01 16:53:14,900 DEBUG   SenderThread:249336 [sender.py:send():232] send: summary
+2022-07-01 16:53:14,905 INFO    SenderThread:249336 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-07-01 16:53:15,740 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/wandb-summary.json
+2022-07-01 16:53:17,752 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 16:53:18,818 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:53:18,818 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:53:19,758 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 16:53:28,792 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 16:53:30,803 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 16:53:33,994 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:53:33,995 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:53:38,823 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 16:53:40,828 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 16:53:42,160 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 16:53:47,919 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 16:53:49,254 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:53:49,255 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:53:49,923 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 16:53:57,941 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 16:53:59,944 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 16:54:04,438 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:54:04,438 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:54:07,967 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 16:54:09,971 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 16:54:12,904 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 16:54:16,983 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 16:54:18,987 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 16:54:19,763 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:54:19,764 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:54:27,005 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 16:54:29,009 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 16:54:35,447 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:54:35,448 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:54:36,031 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 16:54:38,036 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 16:54:43,667 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 16:54:46,058 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 16:54:48,062 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 16:54:50,681 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:54:50,681 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:54:55,082 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 16:55:05,098 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 16:55:05,833 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:55:05,835 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:55:14,419 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 16:55:20,982 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:55:20,982 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:55:36,141 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:55:36,141 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:55:45,106 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 16:55:51,323 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:55:51,324 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:56:06,483 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:56:06,483 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:56:15,810 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 16:56:21,635 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:56:21,636 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:56:36,848 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:56:36,848 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:56:46,605 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 16:56:52,102 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:56:52,102 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:57:07,442 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:57:07,443 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:57:17,368 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 16:57:22,838 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:57:22,839 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:57:38,158 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:57:38,158 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:57:48,138 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 16:57:53,493 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:57:53,494 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:58:08,767 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:58:08,767 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:58:18,896 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 16:58:24,049 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:58:24,050 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:58:39,385 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:58:39,385 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:58:49,674 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 16:58:54,715 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:58:54,715 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:59:10,100 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:59:10,100 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:59:20,447 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 16:59:25,363 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:59:25,364 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:59:40,653 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:59:40,654 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 16:59:51,217 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 16:59:55,974 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 16:59:55,975 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:00:11,288 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:00:11,289 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:00:21,964 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:00:26,562 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:00:26,563 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:00:41,736 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:00:41,737 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:00:52,732 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:00:56,932 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:00:56,932 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:01:12,089 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:01:12,089 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:01:15,075 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-01 17:01:15,076 DEBUG   SenderThread:249336 [sender.py:send():232] send: history
+2022-07-01 17:01:15,076 DEBUG   SenderThread:249336 [sender.py:send():232] send: summary
+2022-07-01 17:01:15,080 INFO    SenderThread:249336 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-07-01 17:01:15,506 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/wandb-summary.json
+2022-07-01 17:01:18,516 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:01:23,513 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:01:27,259 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:01:27,259 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:01:42,413 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:01:42,413 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:01:54,227 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:01:57,706 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:01:57,706 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:02:12,966 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:02:12,966 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:02:25,015 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:02:28,248 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:02:28,249 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:02:43,537 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:02:43,538 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:02:55,798 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:02:58,721 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:02:58,722 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:02:59,392 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-01 17:02:59,394 DEBUG   SenderThread:249336 [sender.py:send():232] send: history
+2022-07-01 17:02:59,394 DEBUG   SenderThread:249336 [sender.py:send():232] send: summary
+2022-07-01 17:02:59,398 INFO    SenderThread:249336 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-07-01 17:02:59,635 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/wandb-summary.json
+2022-07-01 17:03:00,638 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:03:13,881 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:03:13,881 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:03:26,493 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:03:29,031 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:03:29,032 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:03:44,206 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:03:44,206 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:03:57,260 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:03:59,440 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:03:59,440 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:04:14,844 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:04:14,844 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:04:28,047 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:04:30,091 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:04:30,091 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:04:43,192 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-01 17:04:43,193 DEBUG   SenderThread:249336 [sender.py:send():232] send: history
+2022-07-01 17:04:43,195 DEBUG   SenderThread:249336 [sender.py:send():232] send: summary
+2022-07-01 17:04:43,199 INFO    SenderThread:249336 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-07-01 17:04:43,754 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/wandb-summary.json
+2022-07-01 17:04:45,235 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:04:45,236 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:04:45,756 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:04:58,838 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:05:00,408 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:05:00,409 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:05:15,557 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:05:15,557 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:05:29,600 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:05:30,778 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:05:30,778 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:05:46,124 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:05:46,125 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:06:00,367 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:06:01,455 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:06:01,455 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:06:16,707 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:06:16,707 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:06:26,287 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-01 17:06:26,288 DEBUG   SenderThread:249336 [sender.py:send():232] send: history
+2022-07-01 17:06:26,288 DEBUG   SenderThread:249336 [sender.py:send():232] send: summary
+2022-07-01 17:06:26,295 INFO    SenderThread:249336 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-07-01 17:06:26,873 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/wandb-summary.json
+2022-07-01 17:06:28,877 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:06:31,122 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:06:31,856 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:06:31,857 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:06:47,017 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:06:47,017 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:07:01,815 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:07:02,175 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:07:02,175 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:07:17,523 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:07:17,524 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:07:32,603 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:07:32,803 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:07:32,803 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:07:48,022 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:07:48,023 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:08:03,189 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:08:03,190 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:08:03,393 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:08:08,495 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-01 17:08:08,496 DEBUG   SenderThread:249336 [sender.py:send():232] send: history
+2022-07-01 17:08:08,496 DEBUG   SenderThread:249336 [sender.py:send():232] send: summary
+2022-07-01 17:08:08,500 INFO    SenderThread:249336 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-07-01 17:08:08,980 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/wandb-summary.json
+2022-07-01 17:08:09,982 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:08:15,992 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:08:18,002 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:08:18,363 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:08:18,363 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:08:20,078 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:08:28,097 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:08:30,101 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:08:33,524 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:08:33,525 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:08:34,183 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:08:37,126 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:08:39,132 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:08:47,153 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:08:48,681 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:08:48,683 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:08:49,157 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:08:56,171 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:09:03,922 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:09:03,923 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:09:04,985 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:09:06,186 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:09:08,191 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:09:15,219 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:09:17,229 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:09:20,294 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:09:20,295 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:09:25,244 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:09:34,262 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:09:35,493 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:09:35,495 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:09:35,827 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:09:36,268 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:09:44,285 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:09:46,293 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:09:50,675 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:09:50,675 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:09:55,303 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:09:57,312 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:10:05,987 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:10:05,988 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:10:06,617 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:10:21,137 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:10:21,139 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:10:36,298 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:10:36,299 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:10:37,346 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:10:51,449 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:10:51,450 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:11:06,599 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:11:06,599 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:11:08,087 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:11:21,790 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:11:21,791 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:11:37,162 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:11:37,163 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:11:38,900 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:11:52,430 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:11:52,430 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:12:07,723 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:12:07,723 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:12:09,707 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:12:22,980 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:12:22,981 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:12:38,288 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:12:38,288 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:12:40,521 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:12:53,579 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:12:53,579 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:13:08,914 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:13:08,915 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:13:11,323 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:13:24,266 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:13:24,267 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:13:39,594 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:13:39,595 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:13:42,129 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:13:54,872 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:13:54,873 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:14:10,147 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:14:10,147 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:14:12,922 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:14:25,480 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:14:25,481 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:14:40,733 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:14:40,733 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:14:43,728 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:14:56,075 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:14:56,075 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:15:11,430 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:15:11,430 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:15:14,534 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:15:26,795 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:15:26,795 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:15:42,007 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:15:42,008 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:15:45,333 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:15:57,179 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:15:57,179 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:16:12,336 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:16:12,337 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:16:16,150 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:16:27,622 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:16:27,622 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:16:27,880 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-01 17:16:27,881 DEBUG   SenderThread:249336 [sender.py:send():232] send: history
+2022-07-01 17:16:27,881 DEBUG   SenderThread:249336 [sender.py:send():232] send: summary
+2022-07-01 17:16:28,012 INFO    SenderThread:249336 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-07-01 17:16:28,734 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/wandb-summary.json
+2022-07-01 17:16:30,739 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:16:42,844 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:16:42,844 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:16:46,889 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:16:57,996 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:16:57,997 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:17:13,214 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:17:13,215 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:17:17,643 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:17:28,493 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:17:28,493 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:17:43,876 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:17:43,876 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:17:48,443 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:17:59,088 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:17:59,089 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:18:14,324 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:18:14,325 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:18:15,219 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-01 17:18:15,219 DEBUG   SenderThread:249336 [sender.py:send():232] send: history
+2022-07-01 17:18:15,220 DEBUG   SenderThread:249336 [sender.py:send():232] send: summary
+2022-07-01 17:18:15,223 INFO    SenderThread:249336 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-07-01 17:18:15,854 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/wandb-summary.json
+2022-07-01 17:18:17,858 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:18:19,268 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:18:29,464 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:18:29,464 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:18:44,616 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:18:44,616 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:18:50,000 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:18:59,791 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:18:59,791 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:19:15,068 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:19:15,068 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:19:20,797 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:19:30,363 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:19:30,363 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:19:46,137 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:19:46,138 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:19:51,576 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:20:01,302 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:20:01,303 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:20:03,105 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-01 17:20:03,106 DEBUG   SenderThread:249336 [sender.py:send():232] send: history
+2022-07-01 17:20:03,107 DEBUG   SenderThread:249336 [sender.py:send():232] send: summary
+2022-07-01 17:20:03,114 INFO    SenderThread:249336 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-07-01 17:20:03,975 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:20:03,975 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/wandb-summary.json
+2022-07-01 17:20:16,498 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:20:16,499 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:20:22,338 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:20:31,656 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:20:31,656 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:20:46,868 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:20:46,868 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:20:53,106 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:21:02,110 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:21:02,110 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:21:17,371 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:21:17,371 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:21:23,917 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:21:32,603 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:21:32,603 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:21:47,777 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:21:47,777 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:21:50,629 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-01 17:21:50,630 DEBUG   SenderThread:249336 [sender.py:send():232] send: history
+2022-07-01 17:21:50,631 DEBUG   SenderThread:249336 [sender.py:send():232] send: summary
+2022-07-01 17:21:50,636 INFO    SenderThread:249336 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-07-01 17:21:51,092 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/wandb-summary.json
+2022-07-01 17:21:53,095 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:21:54,743 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:22:02,932 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:22:02,932 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:22:18,082 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:22:18,082 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:22:25,454 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:22:33,257 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:22:33,257 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:22:48,671 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:22:48,672 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:22:56,235 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:23:03,929 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:23:03,929 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:23:19,142 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:23:19,143 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:23:27,041 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:23:34,336 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:23:34,337 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:23:37,748 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-01 17:23:37,749 DEBUG   SenderThread:249336 [sender.py:send():232] send: history
+2022-07-01 17:23:37,749 DEBUG   SenderThread:249336 [sender.py:send():232] send: summary
+2022-07-01 17:23:37,754 INFO    SenderThread:249336 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-07-01 17:23:38,221 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/wandb-summary.json
+2022-07-01 17:23:39,224 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:23:45,232 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:23:46,235 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:23:49,515 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:23:49,515 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:23:56,254 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:23:57,836 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:23:58,257 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:24:04,835 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:24:04,835 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:24:05,274 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:24:07,279 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:24:15,292 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:24:17,296 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:24:20,027 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:24:20,027 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:24:25,315 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:24:27,318 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:24:28,641 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:24:34,336 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:24:35,206 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:24:35,206 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:24:36,340 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:24:42,356 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:24:44,360 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:24:50,709 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:24:50,710 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:24:51,375 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:24:53,380 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:24:59,450 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:25:01,400 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:25:03,404 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:25:05,924 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:25:05,925 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:25:11,418 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:25:13,421 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:25:21,158 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:25:21,158 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:25:21,430 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:25:24,436 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:25:30,197 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:25:36,315 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:25:36,316 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:25:51,465 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:25:51,465 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:26:00,933 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:26:06,626 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:26:06,627 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:26:21,783 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:26:21,783 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:26:31,665 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:26:36,926 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:26:36,927 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:26:52,157 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:26:52,158 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:27:02,481 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:27:07,430 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:27:07,430 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:27:22,729 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:27:22,730 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:27:33,271 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:27:37,982 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:27:37,983 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:27:53,325 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:27:53,326 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:28:04,057 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:28:08,575 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:28:08,575 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:28:23,841 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:28:23,841 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:28:34,855 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:28:39,108 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:28:39,109 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:28:54,340 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:28:54,340 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:29:05,641 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:29:09,663 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:29:09,664 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:29:24,975 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:29:24,975 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:29:36,428 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:29:40,273 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:29:40,273 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:29:55,526 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:29:55,526 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:30:07,220 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:30:10,797 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:30:10,798 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:30:26,213 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:30:26,213 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:30:38,019 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:30:41,425 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:30:41,427 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:30:56,770 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:30:56,771 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:31:08,837 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:31:11,916 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:31:11,916 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:31:27,068 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:31:27,069 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:31:39,668 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:31:40,331 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-01 17:31:40,331 DEBUG   SenderThread:249336 [sender.py:send():232] send: history
+2022-07-01 17:31:40,332 DEBUG   SenderThread:249336 [sender.py:send():232] send: summary
+2022-07-01 17:31:40,338 INFO    SenderThread:249336 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-07-01 17:31:40,846 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/wandb-summary.json
+2022-07-01 17:31:41,868 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:31:42,214 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:31:42,214 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:31:57,371 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:31:57,372 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:32:10,406 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:32:12,521 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:32:12,522 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:32:27,743 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:32:27,744 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:32:41,180 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:32:42,975 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:32:42,975 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:32:58,344 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:32:58,344 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:33:11,998 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:33:13,515 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:33:13,516 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:33:28,157 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-01 17:33:28,158 DEBUG   SenderThread:249336 [sender.py:send():232] send: history
+2022-07-01 17:33:28,158 DEBUG   SenderThread:249336 [sender.py:send():232] send: summary
+2022-07-01 17:33:28,161 INFO    SenderThread:249336 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-07-01 17:33:28,671 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:33:28,671 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:33:28,994 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/wandb-summary.json
+2022-07-01 17:33:30,033 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:33:42,768 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:33:43,860 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:33:43,860 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:33:59,016 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:33:59,016 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:34:13,520 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:34:14,233 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:34:14,233 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:34:29,527 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:34:29,527 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:34:44,317 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:34:44,925 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:34:44,925 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:35:00,174 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:35:00,175 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:35:15,103 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:35:15,331 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:35:15,331 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:35:15,852 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-01 17:35:15,853 DEBUG   SenderThread:249336 [sender.py:send():232] send: history
+2022-07-01 17:35:15,854 DEBUG   SenderThread:249336 [sender.py:send():232] send: summary
+2022-07-01 17:35:15,860 INFO    SenderThread:249336 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-07-01 17:35:16,145 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/wandb-summary.json
+2022-07-01 17:35:17,152 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:35:30,527 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:35:30,528 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:35:45,680 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:35:45,681 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:35:45,852 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:36:00,934 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:36:00,935 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:36:16,195 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:36:16,196 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:36:16,633 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:36:31,429 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:36:31,429 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:36:46,610 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:36:46,611 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:36:47,443 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:37:01,777 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:37:01,777 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:37:01,787 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-01 17:37:01,918 DEBUG   SenderThread:249336 [sender.py:send():232] send: history
+2022-07-01 17:37:01,919 DEBUG   SenderThread:249336 [sender.py:send():232] send: summary
+2022-07-01 17:37:01,922 INFO    SenderThread:249336 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-07-01 17:37:02,262 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/wandb-summary.json
+2022-07-01 17:37:03,264 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:37:16,920 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:37:16,921 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:37:18,223 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:37:32,072 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:37:32,073 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:37:47,258 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:37:47,258 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:37:48,966 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:38:03,041 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:38:03,041 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:38:18,333 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:38:18,334 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:38:19,759 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:38:33,522 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:38:33,523 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:38:48,733 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:38:48,734 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:38:49,468 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: partial_history
+2022-07-01 17:38:49,468 DEBUG   SenderThread:249336 [sender.py:send():232] send: history
+2022-07-01 17:38:49,469 DEBUG   SenderThread:249336 [sender.py:send():232] send: summary
+2022-07-01 17:38:49,472 INFO    SenderThread:249336 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-07-01 17:38:50,381 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/wandb-summary.json
+2022-07-01 17:38:50,558 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:38:51,383 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:38:55,388 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:38:57,393 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:38:59,413 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:39:01,416 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:39:03,874 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:39:03,874 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:39:09,430 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:39:11,435 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:39:18,453 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:39:19,054 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:39:19,054 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:39:20,459 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:39:21,312 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:39:26,469 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:39:29,492 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:39:34,444 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:39:34,445 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:39:36,502 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:39:45,517 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:39:47,522 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:39:49,625 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:39:49,626 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:39:52,089 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:39:55,549 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:39:57,551 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:40:04,809 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:40:04,809 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:40:05,566 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:40:07,569 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:40:14,598 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:40:16,603 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:40:20,475 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:40:20,476 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:40:21,617 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:40:22,911 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:40:23,623 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:40:31,638 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:40:33,641 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:40:35,904 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:40:35,905 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:40:36,649 INFO    Thread-7  :249336 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_165236-lz2sru4s/files/output.log
+2022-07-01 17:40:51,057 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:40:51,057 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:40:53,620 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:41:06,209 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:41:06,209 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:41:21,364 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:41:21,364 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:41:24,385 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:41:36,546 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:41:36,547 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:41:51,692 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:41:51,692 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:41:55,111 DEBUG   SenderThread:249336 [sender.py:send():232] send: stats
+2022-07-01 17:42:06,945 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:42:06,946 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status
+2022-07-01 17:42:22,344 DEBUG   HandlerThread:249336 [handler.py:handle_request():141] handle_request: stop_status
+2022-07-01 17:42:22,344 DEBUG   SenderThread:249336 [sender.py:send_request():246] send_request: stop_status

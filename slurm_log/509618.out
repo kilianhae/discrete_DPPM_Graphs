@@ -1,0 +1,399 @@
+Running on host: tikgpu07
+In directory:
+Starting on: Fri Jul 1 16:35:14 CEST 2022
+SLURM_JOB_ID: 509618
+WWWWWWWWW
+AAAAAAAAAA
+{'dataset': {'dataset_size': 200, 'max_node_num': 60, 'name': 'planar_60_200_pkl'}, 'dropout': 1e-06, 'eval_from': 2, 'exp_dir': 'exp', 'exp_name': 'gridsearch', 'finalinterval': 1, 'hidden': 128, 'hidden_final': 128, 'linear': True, 'mcmc': {'eps': [0.1, 1.0], 'fixed_node_number': True, 'grad_step_size': [0.05, 0.005, 0.0005], 'name': 'langevin', 'step_num': 1000}, 'model': {'models': {'model_1': {'channel_num_list': [2, 4, 4, 4, 2], 'dropout_p': 0.0, 'feature_nums': [16, 16, 16, 16, 16], 'gnn_hidden_num_list': [16, 16, 16, 16], 'name': 'ppgn', 'use_norm_layers': False}}, 'name': 'ppgn', 'stack_num': 1}, 'n_nodes': 30, 'noise_mlp': False, 'noisetype': 'switched', 'normalization': 'instance', 'num_layers': 8, 'num_levels': [64], 'sample': {'batch_size': 32}, 'samplesize': 128, 'seed': 1234, 'sigmarandom': True, 'test': {'batch_size': 32, 'split': 0.2}, 'train': {'batch_size': 64, 'lr_dacey': 0.999, 'lr_init': 0.001, 'max_epoch': 5000, 'momentum': 0.9, 'sample_interval': 1, 'save_interval': 1, 'shuffle': True, 'sigmas': 'None', 'weight_decay': 0.0}, 'weighted': True, 'weighted_loss': True, 'dev': device(type='cuda'), 'run_id': '119926', 'folder_name': 'ppgn_planar_60_200_pkl__Jul-01-16-35-27_119926', 'save_dir': 'exp/gridsearch/ppgn_planar_60_200_pkl__Jul-01-16-35-27_119926', 'model_save_dir': 'exp/gridsearch/ppgn_planar_60_200_pkl__Jul-01-16-35-27_119926/models'}
+| 07-01 16:35:27 EXPERIMENT BEGIN: 
+| 07-01 16:35:27 logging into exp/gridsearch/ppgn_planar_60_200_pkl__Jul-01-16-35-27_119926/info.log
+| 07-01 16:35:27 load dataset: planar_60_200_pkl
+200
+| 07-01 16:35:45 model: Powerful(
+  (activation): LeakyReLU(negative_slope=0.01)
+  (time_mlp): Sequential(
+    (0): Linear(in_features=1, out_features=4, bias=True)
+    (1): GELU()
+    (2): Linear(in_features=4, out_features=1, bias=True)
+  )
+  (in_lin): Sequential(
+    (0): Linear(in_features=2, out_features=128, bias=True)
+  )
+  (layer_cat_lin): Sequential(
+    (0): Linear(in_features=1026, out_features=128, bias=True)
+  )
+  (convs): ModuleList(
+    (0): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=256, out_features=128, bias=True)
+      )
+    )
+    (1): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=256, out_features=128, bias=True)
+      )
+    )
+    (2): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=256, out_features=128, bias=True)
+      )
+    )
+    (3): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=256, out_features=128, bias=True)
+      )
+    )
+    (4): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=256, out_features=128, bias=True)
+      )
+    )
+    (5): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=256, out_features=128, bias=True)
+      )
+    )
+    (6): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=256, out_features=128, bias=True)
+      )
+    )
+    (7): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=256, out_features=128, bias=True)
+      )
+    )
+  )
+  (bns): ModuleList(
+    (0): None
+    (1): None
+    (2): None
+    (3): None
+    (4): None
+    (5): None
+    (6): None
+    (7): None
+  )
+  (feature_extractors): ModuleList(
+    (0): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (1): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (2): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (3): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (4): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (5): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (6): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (7): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=128, out_features=128, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+  )
+  (after_conv): Sequential(
+    (0): Linear(in_features=128, out_features=128, bias=True)
+  )
+  (final_lin): Sequential(
+    (0): Linear(in_features=128, out_features=1, bias=True)
+  )
+)
+| 07-01 16:35:45 Parameters: 
+time_mlp.0.weight ........................................................................................... torch.Size([4, 1])
+time_mlp.0.bias ................................................................................................ torch.Size([4])
+time_mlp.2.weight ........................................................................................... torch.Size([1, 4])
+time_mlp.2.bias ................................................................................................ torch.Size([1])
+in_lin.0.weight ........................................................................................... torch.Size([128, 2])
+in_lin.0.bias ................................................................................................ torch.Size([128])
+layer_cat_lin.0.weight ................................................................................. torch.Size([128, 1026])
+layer_cat_lin.0.bias ......................................................................................... torch.Size([128])
+convs.0.m1.0.weight ..................................................................................... torch.Size([128, 128])
+convs.0.m1.0.bias ............................................................................................ torch.Size([128])
+convs.0.m1.2.weight ..................................................................................... torch.Size([128, 128])
+convs.0.m1.2.bias ............................................................................................ torch.Size([128])
+convs.0.m2.0.weight ..................................................................................... torch.Size([128, 128])
+convs.0.m2.0.bias ............................................................................................ torch.Size([128])
+convs.0.m2.2.weight ..................................................................................... torch.Size([128, 128])
+convs.0.m2.2.bias ............................................................................................ torch.Size([128])
+convs.0.m4.0.weight ..................................................................................... torch.Size([128, 256])
+convs.0.m4.0.bias ............................................................................................ torch.Size([128])
+convs.1.m1.0.weight ..................................................................................... torch.Size([128, 128])
+convs.1.m1.0.bias ............................................................................................ torch.Size([128])
+convs.1.m1.2.weight ..................................................................................... torch.Size([128, 128])
+convs.1.m1.2.bias ............................................................................................ torch.Size([128])
+convs.1.m2.0.weight ..................................................................................... torch.Size([128, 128])
+convs.1.m2.0.bias ............................................................................................ torch.Size([128])
+convs.1.m2.2.weight ..................................................................................... torch.Size([128, 128])
+convs.1.m2.2.bias ............................................................................................ torch.Size([128])
+convs.1.m4.0.weight ..................................................................................... torch.Size([128, 256])
+convs.1.m4.0.bias ............................................................................................ torch.Size([128])
+convs.2.m1.0.weight ..................................................................................... torch.Size([128, 128])
+convs.2.m1.0.bias ............................................................................................ torch.Size([128])
+convs.2.m1.2.weight ..................................................................................... torch.Size([128, 128])
+convs.2.m1.2.bias ............................................................................................ torch.Size([128])
+convs.2.m2.0.weight ..................................................................................... torch.Size([128, 128])
+convs.2.m2.0.bias ............................................................................................ torch.Size([128])
+convs.2.m2.2.weight ..................................................................................... torch.Size([128, 128])
+convs.2.m2.2.bias ............................................................................................ torch.Size([128])
+convs.2.m4.0.weight ..................................................................................... torch.Size([128, 256])
+convs.2.m4.0.bias ............................................................................................ torch.Size([128])
+convs.3.m1.0.weight ..................................................................................... torch.Size([128, 128])
+convs.3.m1.0.bias ............................................................................................ torch.Size([128])
+convs.3.m1.2.weight ..................................................................................... torch.Size([128, 128])
+convs.3.m1.2.bias ............................................................................................ torch.Size([128])
+convs.3.m2.0.weight ..................................................................................... torch.Size([128, 128])
+convs.3.m2.0.bias ............................................................................................ torch.Size([128])
+convs.3.m2.2.weight ..................................................................................... torch.Size([128, 128])
+convs.3.m2.2.bias ............................................................................................ torch.Size([128])
+convs.3.m4.0.weight ..................................................................................... torch.Size([128, 256])
+convs.3.m4.0.bias ............................................................................................ torch.Size([128])
+convs.4.m1.0.weight ..................................................................................... torch.Size([128, 128])
+convs.4.m1.0.bias ............................................................................................ torch.Size([128])
+convs.4.m1.2.weight ..................................................................................... torch.Size([128, 128])
+convs.4.m1.2.bias ............................................................................................ torch.Size([128])
+convs.4.m2.0.weight ..................................................................................... torch.Size([128, 128])
+convs.4.m2.0.bias ............................................................................................ torch.Size([128])
+convs.4.m2.2.weight ..................................................................................... torch.Size([128, 128])
+convs.4.m2.2.bias ............................................................................................ torch.Size([128])
+convs.4.m4.0.weight ..................................................................................... torch.Size([128, 256])
+convs.4.m4.0.bias ............................................................................................ torch.Size([128])
+convs.5.m1.0.weight ..................................................................................... torch.Size([128, 128])
+convs.5.m1.0.bias ............................................................................................ torch.Size([128])
+convs.5.m1.2.weight ..................................................................................... torch.Size([128, 128])
+convs.5.m1.2.bias ............................................................................................ torch.Size([128])
+convs.5.m2.0.weight ..................................................................................... torch.Size([128, 128])
+convs.5.m2.0.bias ............................................................................................ torch.Size([128])
+convs.5.m2.2.weight ..................................................................................... torch.Size([128, 128])
+convs.5.m2.2.bias ............................................................................................ torch.Size([128])
+convs.5.m4.0.weight ..................................................................................... torch.Size([128, 256])
+convs.5.m4.0.bias ............................................................................................ torch.Size([128])
+convs.6.m1.0.weight ..................................................................................... torch.Size([128, 128])
+convs.6.m1.0.bias ............................................................................................ torch.Size([128])
+convs.6.m1.2.weight ..................................................................................... torch.Size([128, 128])
+convs.6.m1.2.bias ............................................................................................ torch.Size([128])
+convs.6.m2.0.weight ..................................................................................... torch.Size([128, 128])
+convs.6.m2.0.bias ............................................................................................ torch.Size([128])
+convs.6.m2.2.weight ..................................................................................... torch.Size([128, 128])
+convs.6.m2.2.bias ............................................................................................ torch.Size([128])
+convs.6.m4.0.weight ..................................................................................... torch.Size([128, 256])
+convs.6.m4.0.bias ............................................................................................ torch.Size([128])
+convs.7.m1.0.weight ..................................................................................... torch.Size([128, 128])
+convs.7.m1.0.bias ............................................................................................ torch.Size([128])
+convs.7.m1.2.weight ..................................................................................... torch.Size([128, 128])
+convs.7.m1.2.bias ............................................................................................ torch.Size([128])
+convs.7.m2.0.weight ..................................................................................... torch.Size([128, 128])
+convs.7.m2.0.bias ............................................................................................ torch.Size([128])
+convs.7.m2.2.weight ..................................................................................... torch.Size([128, 128])
+convs.7.m2.2.bias ............................................................................................ torch.Size([128])
+convs.7.m4.0.weight ..................................................................................... torch.Size([128, 256])
+convs.7.m4.0.bias ............................................................................................ torch.Size([128])
+feature_extractors.0.lin1.0.weight ...................................................................... torch.Size([128, 128])
+feature_extractors.0.lin1.0.bias ............................................................................. torch.Size([128])
+feature_extractors.0.lin2.0.weight ...................................................................... torch.Size([128, 128])
+feature_extractors.0.lin3.0.weight ...................................................................... torch.Size([128, 128])
+feature_extractors.1.lin1.0.weight ...................................................................... torch.Size([128, 128])
+feature_extractors.1.lin1.0.bias ............................................................................. torch.Size([128])
+feature_extractors.1.lin2.0.weight ...................................................................... torch.Size([128, 128])
+feature_extractors.1.lin3.0.weight ...................................................................... torch.Size([128, 128])
+feature_extractors.2.lin1.0.weight ...................................................................... torch.Size([128, 128])
+feature_extractors.2.lin1.0.bias ............................................................................. torch.Size([128])
+feature_extractors.2.lin2.0.weight ...................................................................... torch.Size([128, 128])
+feature_extractors.2.lin3.0.weight ...................................................................... torch.Size([128, 128])
+feature_extractors.3.lin1.0.weight ...................................................................... torch.Size([128, 128])
+feature_extractors.3.lin1.0.bias ............................................................................. torch.Size([128])
+feature_extractors.3.lin2.0.weight ...................................................................... torch.Size([128, 128])
+feature_extractors.3.lin3.0.weight ...................................................................... torch.Size([128, 128])
+feature_extractors.4.lin1.0.weight ...................................................................... torch.Size([128, 128])
+feature_extractors.4.lin1.0.bias ............................................................................. torch.Size([128])
+feature_extractors.4.lin2.0.weight ...................................................................... torch.Size([128, 128])
+feature_extractors.4.lin3.0.weight ...................................................................... torch.Size([128, 128])
+feature_extractors.5.lin1.0.weight ...................................................................... torch.Size([128, 128])
+feature_extractors.5.lin1.0.bias ............................................................................. torch.Size([128])
+feature_extractors.5.lin2.0.weight ...................................................................... torch.Size([128, 128])
+feature_extractors.5.lin3.0.weight ...................................................................... torch.Size([128, 128])
+feature_extractors.6.lin1.0.weight ...................................................................... torch.Size([128, 128])
+feature_extractors.6.lin1.0.bias ............................................................................. torch.Size([128])
+feature_extractors.6.lin2.0.weight ...................................................................... torch.Size([128, 128])
+feature_extractors.6.lin3.0.weight ...................................................................... torch.Size([128, 128])
+feature_extractors.7.lin1.0.weight ...................................................................... torch.Size([128, 128])
+feature_extractors.7.lin1.0.bias ............................................................................. torch.Size([128])
+feature_extractors.7.lin2.0.weight ...................................................................... torch.Size([128, 128])
+feature_extractors.7.lin3.0.weight ...................................................................... torch.Size([128, 128])
+after_conv.0.weight ..................................................................................... torch.Size([128, 128])
+after_conv.0.bias ............................................................................................ torch.Size([128])
+final_lin.0.weight ........................................................................................ torch.Size([1, 128])
+final_lin.0.bias ............................................................................................... torch.Size([1])
+| 07-01 16:35:45 Parameters Count: 1334286, Trainable: 1334286
+| 07-01 16:35:45 Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs, universal_newlines=False, shell=None, istream=None)
+| 07-01 16:35:45 Starting new HTTPS connection (1): api.wandb.ai:443
+| 07-01 16:35:45 https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 484
+| 07-01 16:35:45 Starting new HTTPS connection (1): api.wandb.ai:443
+| 07-01 16:35:45 https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 330
+| 07-01 16:35:45 Starting new HTTPS connection (1): api.wandb.ai:443
+| 07-01 16:35:45 https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 484
+| 07-01 16:35:45 Starting new HTTPS connection (1): api.wandb.ai:443
+| 07-01 16:35:45 https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 330
+| 07-01 16:35:46 Popen(['git', 'cat-file', '--batch-check'], cwd=/usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs, universal_newlines=False, shell=None, istream=<valid stream>)
+| 07-01 16:35:54 load dataset: planar_60_200_pkl
+200
