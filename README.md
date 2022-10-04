@@ -1,7 +1,6 @@
-# Discrete Denoised Diffusion Probabilistic Models (DDPM) for Graphs
+# Diffusion Models for Graphs Benefit From Discrete State Spaces
 
-This project is the latest implementation of the corresponding Bachelors Thesis "Discrete DDPM for Graphs". 
-The implementation is in Python and uses PyTorch as a framework.
+This is the officila repository for the paper "Diffusion Models for Graphs Benefit From Discrete State Spaces". 
 
 ## Installation
 Use package manager Anaconda or Miniconda to generate a environment with the corresponding dependencies.
