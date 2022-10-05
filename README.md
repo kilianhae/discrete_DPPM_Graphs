@@ -1,7 +1,7 @@
 # Diffusion Models for Graphs Benefit From Discrete State Spaces
 
 This is the official repository for the paper "Diffusion Models for Graphs Benefit From Discrete State Spaces". 
-
+Link to the paper: https://arxiv.org/abs/2210.01549
 
 ## Installation
 Use package manager Anaconda or Miniconda to generate a environment with the corresponding dependencies.
