@@ -43,6 +43,7 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
         sample_from_sigma_delta=0.0,
         test_dl=None
         ):
+        
         best_score=np.inf
         best_score_loss=np.inf
         best_epoch=0
@@ -257,11 +258,11 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
                         wandb_dict={}
                         results=sample_main(config,f"{config.model_save_dir}",epoch,num_noiselevel)
                         wandb_dict.update({f"degree_mmd_{num_noiselevel}_main": results["degree"],f"cluster_mmd_{num_noiselevel}_main": results["cluster"],f"orbit_mmd_{num_noiselevel}_main": results["orbit"],f"testloss_bestloss": best_score_loss})
-                        wandb.log(wandb_dict)
+                        wandb.log(wandb_dict
             except Exception as e:
                 print("error in main")
                 print(e)
-
+            
             ## test the selected model with best train-mmd score
             try:      
                 if epoch%config.finalinterval==config.finalinterval-1 and config.eval_from<epoch:
@@ -276,6 +277,7 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
 
         
 def train_main(config, args):
+    config.train.sigmas=np.linspace(0,0.5,config.num_levels[0]+1).tolist()
     set_seed_and_logger(config, args)
     train_dl, test_dl = load_data(config)
     #mc_sampler = get_mc_sampler(config)
@@ -298,8 +300,8 @@ def train_main(config, args):
                            betas=(0.9, 0.999), eps=1e-8,
                            weight_decay=config.train.weight_decay)
 
-    wandb.login(key="c41e04df5bc64c8719064e73973311f58f030f3e")
-    wandb.init(project="train_ppgn_consec_gridsearch", entity="khaefeli",config=config)
+    wandb.login(key="")
+    wandb.init(project="train_ppgn_consec_gridsearch", entity="",config=config)
     sigma_list = len(config.train.sigmas)
     
     fit(model, optimizer, None, train_dl,

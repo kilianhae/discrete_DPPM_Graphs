@@ -39,7 +39,7 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
         sample_from_sigma_delta=0.0,
         test_dl=None
         ):
-
+        
         ## defines the nr of noiselevels to use
         num_levels=[len(sigma_list)]
 
@@ -244,6 +244,7 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
 
 
 def train_main(config, args):
+    config.train.sigmas=np.linspace(0,0.5,config.num_levels[0]+1).tolist()
     set_seed_and_logger(config, args)
     train_dl, test_dl = load_data(config)
     #mc_sampler = get_mc_sampler(config)
@@ -273,7 +274,9 @@ def train_main(config, args):
     sigma_list.sort()
     print(sigma_list)
 
-    wandb.init(project="my-test-project", entity="khaefeli")
+    
+    wandb.init(project="my-test-project", entity="")
+    
 
     fit(model, optimizer, None, train_dl,
         max_node_number=config.dataset.max_node_num,

@@ -15,6 +15,7 @@ from utils.visual_utils import plot_graphs_list, plot_inter_graphs, plot_inter_g
 
 
 def sample_main_edp(config, modellink,epoch,noise_num):
+    config.train.sigmas=np.linspace(0,0.5,config.num_levels[0]+1).tolist()
     
     train_graph_list, test_graph_list = load_data(config, get_graph_list=True)
     #mcmc_sampler = get_mc_sampler(config)
@@ -134,6 +135,7 @@ def sample_main_edp(config, modellink,epoch,noise_num):
 
 ## here we do the same as above however using the train set instead of the testdata
 def sample_testing_edp(config, modellink,epoch,noise_num,train_dl):
+    config.train.sigmas=np.linspace(0,0.5,config.num_levels[0]+1).tolist()
     train_graph_list_adj=[]
     train_graph_list_x=[]
     train_graph_list=[]

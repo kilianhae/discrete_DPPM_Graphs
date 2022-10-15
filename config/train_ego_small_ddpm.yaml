@@ -1,7 +1,7 @@
 
 # the output files will be stored in the directory <exp_dir>/<exp_name>
 exp_dir: exp
-exp_name: ego_small
+exp_name: ego
 
 seed: 1234
 
@@ -12,8 +12,9 @@ dataset:
 
 mcmc:  # hyper parameters in the Langevin MC sampling
   eps:
-  - 0.1
   - 1.0
+  - 0.5
+  - 0.1
   fixed_node_number: true
   grad_step_size:
   - 0.05
@@ -22,7 +23,7 @@ mcmc:  # hyper parameters in the Langevin MC sampling
   name: langevin
   step_num: 1000
 model:
-  name: ppgn  # the name of the score-network, should be one of ['gnn', 'mlp', 'cov', 'unet', 'edp-gnn']
+  name: ppgn  # use edp-gnn or use ppgn depending on model to use
   models:
     model_1:
       dropout_p: 0.0
@@ -31,19 +32,25 @@ model:
       - 16
       - 16
       - 16
+      - 16
+      - 16
       feature_nums:  # F_i
       - 16
       - 16
-      - 16
-      - 16
+      - 32
+      - 64
+      - 64
+      - 32
       - 16
       channel_num_list:  # C_i
       - 2
       - 4
+      - 8
+      - 16
+      - 16
+      - 8
       - 4
-      - 4
-      - 2
-      name: ppgn  # the name of the GNN, should be one of ['gin', 'gcn']
+      name: gin  # the name of the GNN, should be one of ['gin', 'gcn']
       use_norm_layers: false
   stack_num: 1
 
@@ -61,42 +68,40 @@ train:
   lr_init: 0.001
   momentum: 0.9
 
-  max_epoch: 4500
+  max_epoch: 5000
   sample_interval: 1  # run sampling after <sample_interval> epochs
   save_interval: 1 # save the model after <save_interval> epochs
 
   shuffle: true
-  sigmas:
-  - 0.0
-  - 0.0333
-  - 0.0667
-  - 0.1
-  - 0.1333
-  - 0.1667
-  - 0.2
-  - 0.2333
-  - 0.2667
-  - 0.3
-  - 0.3333
-  - 0.3667
-  - 0.4
-  - 0.4333
-  - 0.4667
-  - 0.5
-  
-  
-  
-
   weight_decay: 0.0
 
-num_layers: 6
-hidden: 24
-hidden_final: 24
-dropout: 0.000001
-n_nodes: 18
-normalization: instance
-noise_mlp: true
 
-eval_from: 0
-samplesize: 128
-weighted: true
+##from what epoch and for ow many graphs should be sampled
+eval_from: 1000
+eval_len: 1024
+finalinterval: 1
+
+
+num_layers: 6 #how many ppgn layers are used
+hidden: 32 #size of the hidden layers in the ppgn network
+hidden_final: 32 # size of final hidden layer in ppgn
+dropout: 0.000001
+n_nodes: 30
+normalization: instance
+noise_mlp: false
+
+num_levels: 
+- 32  #amount of noiselevels used in sampling
+
+
+noisetype: switched #deprecated, do not change this
+weighted_loss: true #deprecated, do not change this
+
+
+
+
+
+
+
+
+

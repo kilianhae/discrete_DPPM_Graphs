@@ -1,0 +1,107 @@
+
+# the output files will be stored in the directory <exp_dir>/<exp_name>
+exp_dir: exp
+exp_name: planar
+
+seed: 1234
+
+dataset:
+  dataset_size: 200  # the maximal loaded dataset size
+  max_node_num: 60
+  name: planar_60  # name of the dataset, the pickle file should be data/<name>.pkl
+
+mcmc:  # hyper parameters in the Langevin MC sampling
+  eps:
+  - 1.0
+  - 0.5
+  - 0.1
+  fixed_node_number: true
+  grad_step_size:
+  - 0.05
+  - 0.005
+  - 0.0005
+  name: langevin
+  step_num: 1000
+model:
+  name: edp-gnn  # use edp-gnn or use ppgn depending on model to use
+  models:
+    model_1:
+      dropout_p: 0.0
+      gnn_hidden_num_list:  # feature number for each EDP-GNN layer
+      - 16
+      - 16
+      - 16
+      - 16
+      - 16
+      - 16
+      feature_nums:  # F_i
+      - 16
+      - 16
+      - 32
+      - 64
+      - 64
+      - 32
+      - 16
+      channel_num_list:  # C_i
+      - 2
+      - 4
+      - 8
+      - 16
+      - 16
+      - 8
+      - 4
+      name: gin  # the name of the GNN, should be one of ['gin', 'gcn']
+      use_norm_layers: false
+  stack_num: 1
+
+sample:
+  batch_size: 32
+
+test:
+  batch_size: 32
+  split: 0.2
+
+train:
+  batch_size: 32
+
+  lr_dacey: 0.999
+  lr_init: 0.001
+  momentum: 0.9
+
+  max_epoch: 5000
+  sample_interval: 1  # run sampling after <sample_interval> epochs
+  save_interval: 1 # save the model after <save_interval> epochs
+
+  shuffle: true
+  weight_decay: 0.0
+
+
+##from what epoch and for ow many graphs should be sampled
+eval_from: 1000
+eval_len: 1024
+finalinterval: 1
+
+
+num_layers: 8 #how many ppgn layers are used
+hidden: 128 #size of the hidden layers in the ppgn network
+hidden_final: 128 # size of final hidden layer in ppgn
+dropout: 0.000001
+n_nodes: 30
+normalization: instance
+noise_mlp: false
+
+num_levels: 
+- 128  #amount of noiselevels used in sampling
+
+
+noisetype: switched #deprecated, do not change this
+weighted_loss: true #deprecated, do not change this
+
+
+
+
+
+
+
+
+

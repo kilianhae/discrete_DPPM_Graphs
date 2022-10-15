@@ -466,6 +466,7 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
         
 
 def train_main(config, args):
+    config.train.sigmas=np.linspace(0,0.5,config.num_levels[0]+1).tolist()
     set_seed_and_logger(config, args)
     train_dl, test_dl = load_data(config)
     #mc_sampler = get_mc_sampler(config)
@@ -487,8 +488,8 @@ def train_main(config, args):
                            betas=(0.9, 0.999), eps=1e-8,
                            weight_decay=config.train.weight_decay)
 
-    wandb.login(key="c41e04df5bc64c8719064e73973311f58f030f3e")
-    wandb.init(project="train_ppgn_consec_gridsearch", entity="khaefeli",config=config)
+    wandb.login(key="")
+    wandb.init(project="train_ppgn_consec_gridsearch", entity="",config=config)
     sigma_list = len(config.train.sigmas)
     
 
