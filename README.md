@@ -22,7 +22,8 @@ This python script will iterate over all chosen hyperparameters as a gridsearch 
 
 The gridsearch script will automatically generate additional files within the directories "./scripts/gridsearch/consec_modelname_datetime/" and ".gridsearchconsec_modelname_datetime/". The files in the scripts directory are the needed runnables for starting the Slurm jobs and the files in the .gridsearch directory store a single value, which indicates the Slurm job ID for later lookup.
 
-This should be all you need to train and automatically sample.
+Also, we used wandb for tracking our results. We have left this infrastructure in, just make sure you add your wandb key in the training files in the "train_main" function along with your username. If you do not wish to use wandb simply remove all the mentions of wandb.log().
+
 All results of the training and the followed sampling (models, configs, output files etc. ) are stored in a newly generated directory  "./exp/modelname_dataname_month_time_randomnumber/..." . Additionally, if ran as a Slurm job, then you will have a .err and .out file in the directory ./slurm_log.
 
 ### Training directly as a Python Job
