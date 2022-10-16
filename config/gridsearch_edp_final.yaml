@@ -94,5 +94,5 @@ train:
   weight_decay: 0.0
 
 eval_from: 10
-eval_len: 128
+samplesize: 128
 finalinterval: 1

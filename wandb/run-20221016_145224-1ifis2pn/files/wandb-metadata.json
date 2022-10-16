@@ -1,0 +1,27 @@
+{
+    "os": "Linux-4.19.0-22-amd64-x86_64-with-glibc2.28",
+    "python": "3.9.12",
+    "heartbeatAt": "2022-10-16T12:52:25.695330",
+    "startedAt": "2022-10-16T12:52:24.241827",
+    "docker": null,
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpu_count": 1,
+    "cpu_count": 28,
+    "cuda": null,
+    "args": [
+        "-c",
+        "./config/train_com_small_ddpm.yaml"
+    ],
+    "state": "running",
+    "program": "/usr/itetnas04/data-scratch-01/khaefeli/data/gith/discrete_DPPM_Graphs/ppgn_simple.py",
+    "codePath": "ppgn_simple.py",
+    "git": {
+        "remote": "git@github.com:kilian888/discrete_DPPM_Graphs.git",
+        "commit": "48cac8b7dfde00d30def9ce455487e6250ca3b41"
+    },
+    "email": null,
+    "root": "/usr/itetnas04/data-scratch-01/khaefeli/data/gith/discrete_DPPM_Graphs",
+    "host": "tikgpu01",
+    "username": "khaefeli",
+    "executable": "/itet-stor/khaefeli/net_scratch/conda_envs/SPECTRE/bin/python"
+}

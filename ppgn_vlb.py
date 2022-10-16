@@ -430,11 +430,12 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
                 print(e)
 
             try:      
-                if epoch%config.finalinterval==config.finalinterval-1 and config.eval_from<epoch:
+                if epoch%config.finalinterval==config.finalinterval-1:
                     with torch.no_grad():
                         wandb_dict={}
                         results=sample_main(config,f"{config.model_save_dir}",epoch,num_noiselevel)
                         wandb_dict.update({f"degree_mmd_{num_noiselevel}_main": results["degree"],f"cluster_mmd_{num_noiselevel}_main": results["cluster"],f"orbit_mmd_{num_noiselevel}_main": results["orbit"],f"testloss_best": mean_test_loss})
+                        logging.info(wandb_dict)
                         wandb.log(wandb_dict)
             except Exception as e:
                 print("errormain")
@@ -488,8 +489,8 @@ def train_main(config, args):
                            betas=(0.9, 0.999), eps=1e-8,
                            weight_decay=config.train.weight_decay)
 
-    wandb.login(key="")
-    wandb.init(project="train_ppgn_consec_gridsearch", entity="",config=config)
+    wandb.login(key="c41e04df5bc64c8719064e73973311f58f030f3e")
+    wandb.init(project="train_ppgn_consec_gridsearch", entity="khaefeli",config=config)
     sigma_list = len(config.train.sigmas)
     
 
@@ -519,5 +520,6 @@ if __name__ == "__main__":
     ori_config_dict = get_config(args)
     config_dict = edict(ori_config_dict.copy())
     process_config(config_dict)
+    config_dict.model.name = "ppgn"
     print(config_dict)
     train_main(config_dict, args)

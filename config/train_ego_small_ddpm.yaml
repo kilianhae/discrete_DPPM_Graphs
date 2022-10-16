@@ -8,7 +8,7 @@ seed: 1234
 dataset:
   dataset_size: 200  # the maximal loaded dataset size
   max_node_num: 18
-  name: ego_small  # name of the dataset, the pickle file should be data/<name>.pkl
+  name: ego_18_small  # name of the dataset, the pickle file should be data/<name>.pkl
 
 mcmc:  # hyper parameters in the Langevin MC sampling
   eps:
@@ -76,10 +76,12 @@ train:
   weight_decay: 0.0
 
 
-##from what epoch and for ow many graphs should be sampled
+##from what epoch should model selection be done
 eval_from: 1000
-eval_len: 1024
-finalinterval: 1
+
+##how many grphs sampled per test and each finalinterval sample samplesize many graphs based on current state of model
+samplesize: 128
+finalinterval: 10
 
 
 num_layers: 6 #how many ppgn layers are used

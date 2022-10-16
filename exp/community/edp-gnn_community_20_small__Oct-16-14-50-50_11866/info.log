@@ -1,0 +1,3 @@
+| 10-16 14:50:50 EXPERIMENT BEGIN: 
+| 10-16 14:50:50 logging into exp/community/edp-gnn_community_20_small__Oct-16-14-50-50_11866/info.log
+| 10-16 14:50:50 load dataset: {"graph_type": "community", "possible_params_dict": {"num_communities": [2], "max_nodes": [12, 13, 14, 15, 16, 17, 18, 19, 20]}, "corrupt_func": null, "length": 100, "save_dir": "data", "file_name": "community_small", "max_node": null, "min_node": null}max node number: 20

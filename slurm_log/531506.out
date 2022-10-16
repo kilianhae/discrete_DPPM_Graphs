@@ -1,0 +1,10 @@
+Running on host: tikgpu01
+In directory:
+Starting on: Sun Oct 16 14:50:47 CEST 2022
+SLURM_JOB_ID: 531506
+WWWWWWWWW
+AAAAAAAAAA
+{'exp_dir': 'exp', 'exp_name': 'community', 'seed': 1234, 'dataset': {'dataset_size': 100, 'max_node_num': 20, 'name': 'community_20_small'}, 'mcmc': {'eps': [1.0, 0.5, 0.1], 'fixed_node_number': True, 'grad_step_size': [0.05, 0.005, 0.0005], 'name': 'langevin', 'step_num': 1000}, 'model': {'name': 'ppgn', 'models': {'model_1': {'dropout_p': 0.0, 'gnn_hidden_num_list': [16, 16, 16, 16, 16, 16], 'feature_nums': [16, 16, 32, 64, 64, 32, 16], 'channel_num_list': [2, 4, 8, 16, 16, 8, 4], 'name': 'gin', 'use_norm_layers': False}}, 'stack_num': 1}, 'sample': {'batch_size': 32}, 'test': {'batch_size': 32, 'split': 0.2}, 'train': {'batch_size': 32, 'lr_dacey': 0.999, 'lr_init': 0.001, 'momentum': 0.9, 'max_epoch': 5000, 'sample_interval': 1, 'save_interval': 1, 'shuffle': True, 'weight_decay': 0.0}, 'eval_from': 1000, 'samplesize': 1028, 'finalinterval': 10, 'num_layers': 6, 'hidden': 32, 'hidden_final': 32, 'num_levels': [32], 'noisetype': 'switched', 'weighted_loss': True, 'dev': device(type='cuda'), 'run_id': '11866', 'folder_name': 'edp-gnn_community_20_small__Oct-16-14-50-50_11866', 'save_dir': 'exp/community/edp-gnn_community_20_small__Oct-16-14-50-50_11866', 'model_save_dir': 'exp/community/edp-gnn_community_20_small__Oct-16-14-50-50_11866/models'}
+| 10-16 14:50:50 EXPERIMENT BEGIN: 
+| 10-16 14:50:50 logging into exp/community/edp-gnn_community_20_small__Oct-16-14-50-50_11866/info.log
+| 10-16 14:50:50 load dataset: {"graph_type": "community", "possible_params_dict": {"num_communities": [2], "max_nodes": [12, 13, 14, 15, 16, 17, 18, 19, 20]}, "corrupt_func": null, "length": 100, "save_dir": "data", "file_name": "community_small", "max_node": null, "min_node": null}max node number: 20

@@ -232,11 +232,12 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
 
             ## if conditions are met then evaluate the MMD score compared to the test set using the current model
             try:      
-                if epoch%config.finalinterval==config.finalinterval-1 and config.eval_from<epoch:
+                if epoch%config.finalinterval==config.finalinterval-1:
                     with torch.no_grad():
                         wandb_dict={}
                         results=sample_main_edp(config,f"{config.model_save_dir}",epoch,num_noiselevel)
                         wandb_dict.update({f"degree_mmd_{num_noiselevel}_main": results["degree"],f"cluster_mmd_{num_noiselevel}_main": results["cluster"],f"orbit_mmd_{num_noiselevel}_main": results["orbit"],f"testloss": best_score})
+                        logging.info(wandb_dict)
                         wandb.log(wandb_dict)
             except:
                 print("error")
@@ -274,8 +275,8 @@ def train_main(config, args):
     sigma_list.sort()
     print(sigma_list)
 
-    
-    wandb.init(project="my-test-project", entity="")
+    wandb.login(key="c41e04df5bc64c8719064e73973311f58f030f3e")
+    wandb.init(project="my-test-project", entity="kahefeli")
     
 
     fit(model, optimizer, None, train_dl,
@@ -296,5 +297,6 @@ if __name__ == "__main__":
     ori_config_dict = get_config(args)
     config_dict = edict(ori_config_dict.copy())
     process_config(config_dict)
+    config_dict.model.name = "edp-gnn"
     print(config_dict)
     train_main(config_dict, args)

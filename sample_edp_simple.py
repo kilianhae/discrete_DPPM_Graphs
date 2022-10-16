@@ -130,7 +130,7 @@ def sample_main_edp(config, modellink,epoch,noise_num):
         logging.info(f'MMD_full {file} {eval_len}: {result_dict}')
         return result_dict, gen_graph_list
 
-    results, gen_graph_list = run_sample(eval_len=config.eval_len)
+    results, gen_graph_list = run_sample(eval_len=config.samplesize)
     return results
 
 ## here we do the same as above however using the train set instead of the testdata

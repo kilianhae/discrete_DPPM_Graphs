@@ -1,0 +1,2424 @@
+Running on host: tikgpu01
+In directory:
+Starting on: Sun Oct 16 14:52:15 CEST 2022
+SLURM_JOB_ID: 531507
+WWWWWWWWW
+AAAAAAAAAA
+{'exp_dir': 'exp', 'exp_name': 'community', 'seed': 1234, 'dataset': {'dataset_size': 100, 'max_node_num': 20, 'name': 'community_20_small'}, 'mcmc': {'eps': [1.0, 0.5, 0.1], 'fixed_node_number': True, 'grad_step_size': [0.05, 0.005, 0.0005], 'name': 'langevin', 'step_num': 1000}, 'model': {'name': 'ppgn', 'models': {'model_1': {'dropout_p': 0.0, 'gnn_hidden_num_list': [16, 16, 16, 16, 16, 16], 'feature_nums': [16, 16, 32, 64, 64, 32, 16], 'channel_num_list': [2, 4, 8, 16, 16, 8, 4], 'name': 'gin', 'use_norm_layers': False}}, 'stack_num': 1}, 'sample': {'batch_size': 32}, 'test': {'batch_size': 32, 'split': 0.2}, 'train': {'batch_size': 32, 'lr_dacey': 0.999, 'lr_init': 0.001, 'momentum': 0.9, 'max_epoch': 5000, 'sample_interval': 1, 'save_interval': 1, 'shuffle': True, 'weight_decay': 0.0}, 'eval_from': 1000, 'samplesize': 128, 'finalinterval': 10, 'num_layers': 6, 'hidden': 32, 'hidden_final': 32, 'dropout': 1e-06, 'n_nodes': 30, 'normalization': 'instance', 'noise_mlp': False, 'num_levels': [32], 'noisetype': 'switched', 'weighted_loss': True, 'dev': device(type='cuda'), 'run_id': '11953', 'folder_name': 'edp-gnn_community_20_small__Oct-16-14-52-20_11953', 'save_dir': 'exp/community/edp-gnn_community_20_small__Oct-16-14-52-20_11953', 'model_save_dir': 'exp/community/edp-gnn_community_20_small__Oct-16-14-52-20_11953/models'}
+| 10-16 14:52:21 EXPERIMENT BEGIN: 
+| 10-16 14:52:21 logging into exp/community/edp-gnn_community_20_small__Oct-16-14-52-20_11953/info.log
+| 10-16 14:52:21 load dataset: {"graph_type": "community", "possible_params_dict": {"num_communities": [2], "max_nodes": [12, 13, 14, 15, 16, 17, 18, 19, 20]}, "corrupt_func": null, "length": 100, "save_dir": "data", "file_name": "community_small", "max_node": null, "min_node": null}max node number: 20
+| 10-16 14:52:23 model: Powerful(
+  (activation): LeakyReLU(negative_slope=0.01)
+  (time_mlp): Sequential(
+    (0): Linear(in_features=1, out_features=4, bias=True)
+    (1): GELU()
+    (2): Linear(in_features=4, out_features=1, bias=True)
+  )
+  (in_lin): Sequential(
+    (0): Linear(in_features=2, out_features=32, bias=True)
+  )
+  (layer_cat_lin): Sequential(
+    (0): Linear(in_features=194, out_features=32, bias=True)
+  )
+  (convs): ModuleList(
+    (0): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (1): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (2): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (3): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (4): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+    (5): PowerfulLayer(
+      (m1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+        (1): LeakyReLU(negative_slope=0.01)
+        (2): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (m4): Sequential(
+        (0): Linear(in_features=64, out_features=32, bias=True)
+      )
+    )
+  )
+  (bns): ModuleList(
+    (0): None
+    (1): None
+    (2): None
+    (3): None
+    (4): None
+    (5): None
+  )
+  (feature_extractors): ModuleList(
+    (0): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (1): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (2): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (3): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (4): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+    (5): FeatureExtractor(
+      (lin1): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=True)
+      )
+      (lin2): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (lin3): Sequential(
+        (0): Linear(in_features=32, out_features=32, bias=False)
+      )
+      (activation): LeakyReLU(negative_slope=0.01)
+    )
+  )
+  (after_conv): Sequential(
+    (0): Linear(in_features=32, out_features=32, bias=True)
+  )
+  (final_lin): Sequential(
+    (0): Linear(in_features=32, out_features=1, bias=True)
+  )
+)
+| 10-16 14:52:23 Parameters: 
+time_mlp.0.weight ........................................................................................... torch.Size([4, 1])
+time_mlp.0.bias ................................................................................................ torch.Size([4])
+time_mlp.2.weight ........................................................................................... torch.Size([1, 4])
+time_mlp.2.bias ................................................................................................ torch.Size([1])
+in_lin.0.weight ............................................................................................ torch.Size([32, 2])
+in_lin.0.bias ................................................................................................. torch.Size([32])
+layer_cat_lin.0.weight ................................................................................... torch.Size([32, 194])
+layer_cat_lin.0.bias .......................................................................................... torch.Size([32])
+convs.0.m1.0.weight ....................................................................................... torch.Size([32, 32])
+convs.0.m1.0.bias ............................................................................................. torch.Size([32])
+convs.0.m1.2.weight ....................................................................................... torch.Size([32, 32])
+convs.0.m1.2.bias ............................................................................................. torch.Size([32])
+convs.0.m2.0.weight ....................................................................................... torch.Size([32, 32])
+convs.0.m2.0.bias ............................................................................................. torch.Size([32])
+convs.0.m2.2.weight ....................................................................................... torch.Size([32, 32])
+convs.0.m2.2.bias ............................................................................................. torch.Size([32])
+convs.0.m4.0.weight ....................................................................................... torch.Size([32, 64])
+convs.0.m4.0.bias ............................................................................................. torch.Size([32])
+convs.1.m1.0.weight ....................................................................................... torch.Size([32, 32])
+convs.1.m1.0.bias ............................................................................................. torch.Size([32])
+convs.1.m1.2.weight ....................................................................................... torch.Size([32, 32])
+convs.1.m1.2.bias ............................................................................................. torch.Size([32])
+convs.1.m2.0.weight ....................................................................................... torch.Size([32, 32])
+convs.1.m2.0.bias ............................................................................................. torch.Size([32])
+convs.1.m2.2.weight ....................................................................................... torch.Size([32, 32])
+convs.1.m2.2.bias ............................................................................................. torch.Size([32])
+convs.1.m4.0.weight ....................................................................................... torch.Size([32, 64])
+convs.1.m4.0.bias ............................................................................................. torch.Size([32])
+convs.2.m1.0.weight ....................................................................................... torch.Size([32, 32])
+convs.2.m1.0.bias ............................................................................................. torch.Size([32])
+convs.2.m1.2.weight ....................................................................................... torch.Size([32, 32])
+convs.2.m1.2.bias ............................................................................................. torch.Size([32])
+convs.2.m2.0.weight ....................................................................................... torch.Size([32, 32])
+convs.2.m2.0.bias ............................................................................................. torch.Size([32])
+convs.2.m2.2.weight ....................................................................................... torch.Size([32, 32])
+convs.2.m2.2.bias ............................................................................................. torch.Size([32])
+convs.2.m4.0.weight ....................................................................................... torch.Size([32, 64])
+convs.2.m4.0.bias ............................................................................................. torch.Size([32])
+convs.3.m1.0.weight ....................................................................................... torch.Size([32, 32])
+convs.3.m1.0.bias ............................................................................................. torch.Size([32])
+convs.3.m1.2.weight ....................................................................................... torch.Size([32, 32])
+convs.3.m1.2.bias ............................................................................................. torch.Size([32])
+convs.3.m2.0.weight ....................................................................................... torch.Size([32, 32])
+convs.3.m2.0.bias ............................................................................................. torch.Size([32])
+convs.3.m2.2.weight ....................................................................................... torch.Size([32, 32])
+convs.3.m2.2.bias ............................................................................................. torch.Size([32])
+convs.3.m4.0.weight ....................................................................................... torch.Size([32, 64])
+convs.3.m4.0.bias ............................................................................................. torch.Size([32])
+convs.4.m1.0.weight ....................................................................................... torch.Size([32, 32])
+convs.4.m1.0.bias ............................................................................................. torch.Size([32])
+convs.4.m1.2.weight ....................................................................................... torch.Size([32, 32])
+convs.4.m1.2.bias ............................................................................................. torch.Size([32])
+convs.4.m2.0.weight ....................................................................................... torch.Size([32, 32])
+convs.4.m2.0.bias ............................................................................................. torch.Size([32])
+convs.4.m2.2.weight ....................................................................................... torch.Size([32, 32])
+convs.4.m2.2.bias ............................................................................................. torch.Size([32])
+convs.4.m4.0.weight ....................................................................................... torch.Size([32, 64])
+convs.4.m4.0.bias ............................................................................................. torch.Size([32])
+convs.5.m1.0.weight ....................................................................................... torch.Size([32, 32])
+convs.5.m1.0.bias ............................................................................................. torch.Size([32])
+convs.5.m1.2.weight ....................................................................................... torch.Size([32, 32])
+convs.5.m1.2.bias ............................................................................................. torch.Size([32])
+convs.5.m2.0.weight ....................................................................................... torch.Size([32, 32])
+convs.5.m2.0.bias ............................................................................................. torch.Size([32])
+convs.5.m2.2.weight ....................................................................................... torch.Size([32, 32])
+convs.5.m2.2.bias ............................................................................................. torch.Size([32])
+convs.5.m4.0.weight ....................................................................................... torch.Size([32, 64])
+convs.5.m4.0.bias ............................................................................................. torch.Size([32])
+feature_extractors.0.lin1.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.0.lin1.0.bias .............................................................................. torch.Size([32])
+feature_extractors.0.lin2.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.0.lin3.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.1.lin1.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.1.lin1.0.bias .............................................................................. torch.Size([32])
+feature_extractors.1.lin2.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.1.lin3.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.2.lin1.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.2.lin1.0.bias .............................................................................. torch.Size([32])
+feature_extractors.2.lin2.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.2.lin3.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.3.lin1.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.3.lin1.0.bias .............................................................................. torch.Size([32])
+feature_extractors.3.lin2.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.3.lin3.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.4.lin1.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.4.lin1.0.bias .............................................................................. torch.Size([32])
+feature_extractors.4.lin2.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.4.lin3.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.5.lin1.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.5.lin1.0.bias .............................................................................. torch.Size([32])
+feature_extractors.5.lin2.0.weight ........................................................................ torch.Size([32, 32])
+feature_extractors.5.lin3.0.weight ........................................................................ torch.Size([32, 32])
+after_conv.0.weight ....................................................................................... torch.Size([32, 32])
+after_conv.0.bias ............................................................................................. torch.Size([32])
+final_lin.0.weight ......................................................................................... torch.Size([1, 32])
+final_lin.0.bias ............................................................................................... torch.Size([1])
+| 10-16 14:52:23 Parameters Count: 63886, Trainable: 63886
+| 10-16 14:52:23 Popen(['git', 'rev-parse', '--show-toplevel'], cwd=/usr/itetnas04/data-scratch-01/khaefeli/data/gith/discrete_DPPM_Graphs, universal_newlines=False, shell=None, istream=None)
+| 10-16 14:52:23 Starting new HTTPS connection (1): api.wandb.ai:443
+| 10-16 14:52:23 https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 521
+| 10-16 14:52:23 Starting new HTTPS connection (1): api.wandb.ai:443
+| 10-16 14:52:23 https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 329
+| 10-16 14:52:23 Starting new HTTPS connection (1): api.wandb.ai:443
+| 10-16 14:52:24 https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 521
+| 10-16 14:52:24 Starting new HTTPS connection (1): api.wandb.ai:443
+| 10-16 14:52:24 https://api.wandb.ai:443 "POST /graphql HTTP/1.1" 200 329
+| 10-16 14:52:24 Popen(['git', 'cat-file', '--batch-check'], cwd=/usr/itetnas04/data-scratch-01/khaefeli/data/gith/discrete_DPPM_Graphs, universal_newlines=False, shell=None, istream=<valid stream>)
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+| 10-16 14:52:34 epoch: 000| time: 4.1s| train loss: +2.363e-01 | test loss: +2.046e-01 | 
+| 10-16 14:52:34 epoch: 000| train loss i: nan test loss i: nan | 
+| 10-16 14:52:34 epoch: 000| time: 4.1s| train loss: +2.363e-01 | test loss: +2.046e-01 | 
+| 10-16 14:52:34 epoch: 000| train loss i: nan test loss i: nan | 
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+| 10-16 14:52:38 epoch: 001| time: 4.0s| train loss: +2.045e-01 | test loss: +2.080e-01 | 
+| 10-16 14:52:38 epoch: 001| train loss i: nan test loss i: nan | 
+| 10-16 14:52:39 epoch: 001| time: 4.1s| train loss: +2.045e-01 | test loss: +2.080e-01 | 
+| 10-16 14:52:39 epoch: 001| train loss i: nan test loss i: nan | 
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+ubu
+u
+u
+u
+u
+u
+u
+| 10-16 14:52:43 epoch: 002| time: 4.6s| train loss: +1.718e-01 | test loss: +1.904e-01 | 
+| 10-16 14:52:43 epoch: 002| train loss i: nan test loss i: nan | 
+| 10-16 14:52:43 epoch: 002| time: 4.6s| train loss: +1.718e-01 | test loss: +1.904e-01 | 
+| 10-16 14:52:43 epoch: 002| train loss i: nan test loss i: nan | 
