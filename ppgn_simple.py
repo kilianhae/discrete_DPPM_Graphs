@@ -258,7 +258,7 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
                         wandb_dict={}
                         results=sample_main(config,f"{config.model_save_dir}",epoch,num_noiselevel)
                         wandb_dict.update({f"degree_mmd_{num_noiselevel}_main": results["degree"],f"cluster_mmd_{num_noiselevel}_main": results["cluster"],f"orbit_mmd_{num_noiselevel}_main": results["orbit"],f"testloss_bestloss": best_score_loss})
-                        wandb.log(wandb_dict
+                        wandb.log(wandb_dict)
             except Exception as e:
                 print("error in main")
                 print(e)
