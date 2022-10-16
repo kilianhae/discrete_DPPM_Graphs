@@ -67,3 +67,43 @@
 2022-10-16 14:52:54,059 DEBUG   SenderThread:11982 [sender.py:send():232] send: stats
 2022-10-16 14:52:55,683 INFO    Thread-7  :11982 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/gith/discrete_DPPM_Graphs/wandb/run-20221016_145224-1ifis2pn/files/output.log
 2022-10-16 14:52:56,684 INFO    Thread-7  :11982 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/gith/discrete_DPPM_Graphs/wandb/run-20221016_145224-1ifis2pn/files/config.yaml
+2022-10-16 14:52:57,541 DEBUG   HandlerThread:11982 [handler.py:handle_request():141] handle_request: partial_history
+2022-10-16 14:52:57,542 DEBUG   SenderThread:11982 [sender.py:send():232] send: history
+2022-10-16 14:52:57,543 DEBUG   SenderThread:11982 [sender.py:send():232] send: summary
+2022-10-16 14:52:57,546 INFO    SenderThread:11982 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-10-16 14:52:57,685 INFO    Thread-7  :11982 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/gith/discrete_DPPM_Graphs/wandb/run-20221016_145224-1ifis2pn/files/wandb-summary.json
+2022-10-16 14:52:59,689 INFO    Thread-7  :11982 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/gith/discrete_DPPM_Graphs/wandb/run-20221016_145224-1ifis2pn/files/output.log
+2022-10-16 14:53:02,098 DEBUG   HandlerThread:11982 [handler.py:handle_request():141] handle_request: stop_status
+2022-10-16 14:53:02,099 DEBUG   SenderThread:11982 [sender.py:send_request():246] send_request: stop_status
+2022-10-16 14:53:02,244 DEBUG   HandlerThread:11982 [handler.py:handle_request():141] handle_request: partial_history
+2022-10-16 14:53:02,254 DEBUG   SenderThread:11982 [sender.py:send():232] send: history
+2022-10-16 14:53:02,255 DEBUG   SenderThread:11982 [sender.py:send():232] send: summary
+2022-10-16 14:53:02,259 INFO    SenderThread:11982 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-10-16 14:53:02,692 INFO    Thread-7  :11982 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/gith/discrete_DPPM_Graphs/wandb/run-20221016_145224-1ifis2pn/files/wandb-summary.json
+2022-10-16 14:53:03,694 INFO    Thread-7  :11982 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/gith/discrete_DPPM_Graphs/wandb/run-20221016_145224-1ifis2pn/files/output.log
+2022-10-16 14:53:06,905 DEBUG   HandlerThread:11982 [handler.py:handle_request():141] handle_request: partial_history
+2022-10-16 14:53:06,906 DEBUG   SenderThread:11982 [sender.py:send():232] send: history
+2022-10-16 14:53:06,906 DEBUG   SenderThread:11982 [sender.py:send():232] send: summary
+2022-10-16 14:53:07,015 INFO    SenderThread:11982 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-10-16 14:53:07,698 INFO    Thread-7  :11982 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/gith/discrete_DPPM_Graphs/wandb/run-20221016_145224-1ifis2pn/files/wandb-summary.json
+2022-10-16 14:53:09,701 INFO    Thread-7  :11982 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/gith/discrete_DPPM_Graphs/wandb/run-20221016_145224-1ifis2pn/files/output.log
+2022-10-16 14:53:11,519 DEBUG   HandlerThread:11982 [handler.py:handle_request():141] handle_request: partial_history
+2022-10-16 14:53:11,520 DEBUG   SenderThread:11982 [sender.py:send():232] send: history
+2022-10-16 14:53:11,520 DEBUG   SenderThread:11982 [sender.py:send():232] send: summary
+2022-10-16 14:53:11,523 INFO    SenderThread:11982 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-10-16 14:53:11,704 INFO    Thread-7  :11982 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/gith/discrete_DPPM_Graphs/wandb/run-20221016_145224-1ifis2pn/files/wandb-summary.json
+2022-10-16 14:53:13,707 INFO    Thread-7  :11982 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/gith/discrete_DPPM_Graphs/wandb/run-20221016_145224-1ifis2pn/files/output.log
+2022-10-16 14:53:15,862 DEBUG   HandlerThread:11982 [handler.py:handle_request():141] handle_request: partial_history
+2022-10-16 14:53:15,862 DEBUG   SenderThread:11982 [sender.py:send():232] send: history
+2022-10-16 14:53:15,863 DEBUG   SenderThread:11982 [sender.py:send():232] send: summary
+2022-10-16 14:53:15,867 INFO    SenderThread:11982 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-10-16 14:53:16,710 INFO    Thread-7  :11982 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/gith/discrete_DPPM_Graphs/wandb/run-20221016_145224-1ifis2pn/files/wandb-summary.json
+2022-10-16 14:53:17,256 DEBUG   HandlerThread:11982 [handler.py:handle_request():141] handle_request: stop_status
+2022-10-16 14:53:17,256 DEBUG   SenderThread:11982 [sender.py:send_request():246] send_request: stop_status
+2022-10-16 14:53:17,732 INFO    Thread-7  :11982 [dir_watcher.py:_on_file_modified():226] file/dir modified: /usr/itetnas04/data-scratch-01/khaefeli/data/gith/discrete_DPPM_Graphs/wandb/run-20221016_145224-1ifis2pn/files/output.log
+2022-10-16 14:53:24,401 DEBUG   SenderThread:11982 [sender.py:send():232] send: stats
+2022-10-16 14:53:32,408 DEBUG   HandlerThread:11982 [handler.py:handle_request():141] handle_request: stop_status
+2022-10-16 14:53:32,408 DEBUG   SenderThread:11982 [sender.py:send_request():246] send_request: stop_status
+2022-10-16 14:53:47,562 DEBUG   HandlerThread:11982 [handler.py:handle_request():141] handle_request: stop_status
+2022-10-16 14:53:47,562 DEBUG   SenderThread:11982 [sender.py:send_request():246] send_request: stop_status
+2022-10-16 14:53:54,741 DEBUG   SenderThread:11982 [sender.py:send():232] send: stats
