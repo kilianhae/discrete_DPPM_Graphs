@@ -275,8 +275,13 @@ def train_main(config, args):
     sigma_list.sort()
     print(sigma_list)
 
+<<<<<<< HEAD
+    wandb.login(key="")
+    wandb.init(project="my-test-project", entity="khaefeli")
+=======
     wandb.login(key="c41e04df5bc64c8719064e73973311f58f030f3e")
     wandb.init(project="my-test-project", entity="kahefeli")
+>>>>>>> 62fa7bda95c60f710bab0fe1b6d74b24ea0eb6c2
     
 
     fit(model, optimizer, None, train_dl,

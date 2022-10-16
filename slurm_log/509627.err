@@ -1,53 +1,0 @@
-#!/bin/bash -v
-#SBATCH --job-name=my_job
-#SBATCH --cpus-per-task=4
-#SBATCH --mem=16G
-#SBATCH --nodes=1
-#SBATCH --account=tik-highmem
-#SBATCH --gres=gpu:1
-#SBATCH --mail-type=ALL                           # mail configuration: NONE, BEGIN, END, FAIL, REQUEUE, ALL
-#SBATCH --output=slurm_log/%j.out                 # where to store the output ( %j is the JOBID )
-#SBATCH --error=slurm_log/%j.err                  # where to store error messages SBATCH --constraint='tesla_v100|geforce_rtx_3090'
-
-/bin/echo Running on host: `hostname`
-/bin/echo In directory: `/itet-stor/khaefeli/net_scratch/khaefeli_graph_ddpm/GraphScoreMatching_ddpm_discrete/GraphScoreMatching_ppgn`
-/scratch/slurm/spool/job509627/slurm_script: line 13: /itet-stor/khaefeli/net_scratch/khaefeli_graph_ddpm/GraphScoreMatching_ddpm_discrete/GraphScoreMatching_ppgn: Is a directory
-/bin/echo Starting on: `date`
-/bin/echo SLURM_JOB_ID: $SLURM_JOB_ID
-python3 edp_simple.py -c config/gridsearch/consec_edp_1.7_16:44/gridsearch_edp_consec_ego_18_small_6,32_1_32_switched_True_1234.yaml
-wandb: Currently logged in as: khaefeli (use `wandb login --relogin` to force relogin)
-wandb: wandb version 0.12.20 is available!  To upgrade, please run:
-wandb:  $ pip install wandb --upgrade
-wandb: Tracking run with wandb version 0.12.15
-wandb: Run data is saved locally in /usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/wandb/run-20220701_164456-1x9xr7kj
-wandb: Run `wandb offline` to turn off syncing.
-wandb: Syncing run playful-eon-242
-wandb: ⭐️ View project at https://wandb.ai/khaefeli/my-test-project
-wandb: 🚀 View run at https://wandb.ai/khaefeli/my-test-project/runs/1x9xr7kj
-/itet-stor/khaefeli/net_scratch/conda_envs/SPECTRE/lib/python3.9/site-packages/torch/optim/lr_scheduler.py:154: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
-  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
-/itet-stor/khaefeli/net_scratch/conda_envs/SPECTRE/lib/python3.9/site-packages/numpy/core/fromnumeric.py:3440: RuntimeWarning: Mean of empty slice.
-  return _methods._mean(a, axis=axis, dtype=dtype,
-/itet-stor/khaefeli/net_scratch/conda_envs/SPECTRE/lib/python3.9/site-packages/numpy/core/_methods.py:189: RuntimeWarning: invalid value encountered in double_scalars
-  ret = ret.dtype.type(ret / rcount)
-Traceback (most recent call last):
-  File "/usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/edp_simple.py", line 202, in fit
-    wandb_dict.update({f"degree_mmd_{num_noiselevel}": lastmmd[num_noiselevel]["degree"],f"cluster_mmd_{num_noiselevel}": lastmmd[num_noiselevel]["cluster"],f"orbit_mmd_{num_noiselevel}": lastmmd[num_noiselevel]["orbit"],f"likelyhood_{num_noiselevel}": lastmmd[num_noiselevel]["likelyhood"],"trainloss": mean_train_loss,"testloss": mean_test_loss})
-KeyError: 32
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/edp_simple.py", line 294, in <module>
-    train_main(config_dict, args)
-  File "/usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/edp_simple.py", line 275, in train_main
-    fit(model, optimizer, None, train_dl,
-  File "/usr/itetnas04/data-scratch-01/khaefeli/data/discrete_ddpm_graphs/edp_simple.py", line 205, in fit
-    wandb_dict.update({f"degree_mmd_{num_noiselevel}": lastmmd[num_noiselevel]["degree"],f"cluster_mmd_{num_noiselevel}": lastmmd[num_noiselevel]["cluster"],f"orbit_mmd_{num_noiselevel}": lastmmd[num_noiselevel]["orbit"],"trainloss": mean_train_loss,"testloss": mean_test_loss})
-KeyError: 32
-wandb: Waiting for W&B process to finish... (failed 1). Press Control-C to abort syncing.
-wandb: - 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.017 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.017 MB uploaded (0.000 MB deduped)wandb: \ 0.004 MB of 0.017 MB uploaded (0.000 MB deduped)wandb: | 0.017 MB of 0.017 MB uploaded (0.000 MB deduped)wandb: / 0.017 MB of 0.017 MB uploaded (0.000 MB deduped)wandb: - 0.017 MB of 0.017 MB uploaded (0.000 MB deduped)wandb: \ 0.017 MB of 0.017 MB uploaded (0.000 MB deduped)wandb: | 0.017 MB of 0.017 MB uploaded (0.000 MB deduped)wandb: / 0.017 MB of 0.017 MB uploaded (0.000 MB deduped)wandb: - 0.017 MB of 0.017 MB uploaded (0.000 MB deduped)wandb:                                                                                
-wandb: Synced playful-eon-242: https://wandb.ai/khaefeli/my-test-project/runs/1x9xr7kj
-wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
-wandb: Find logs at: ./wandb/run-20220701_164456-1x9xr7kj/logs
-exit 0;

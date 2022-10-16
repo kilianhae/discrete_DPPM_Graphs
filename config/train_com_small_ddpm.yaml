@@ -77,11 +77,20 @@ train:
 
 
 ##from what epoch should model selection be done
+<<<<<<< HEAD
+eval_from: 5000
+
+##how many grphs sampled per test and each finalinterval sample samplesize many graphs based on current state of model
+samplesize: 128
+#set below eval_from to do runs before doing model selection
+finalinterval: 2500
+=======
 eval_from: 1000
 
 ##how many grphs sampled per test and each finalinterval sample samplesize many graphs based on current state of model
 samplesize: 128
 finalinterval: 10
+>>>>>>> 62fa7bda95c60f710bab0fe1b6d74b24ea0eb6c2
 
 
 num_layers: 6 #how many ppgn layers are used

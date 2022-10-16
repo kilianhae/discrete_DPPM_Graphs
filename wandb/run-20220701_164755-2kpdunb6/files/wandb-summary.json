@@ -1,1 +1,0 @@
-{"degree_mmd_64": 0, "cluster_mmd_64": 0, "trainloss": 32.17792065938314, "testloss": 33.676292419433594, "evalloss": 0, "_timestamp": 1656686909, "_runtime": 34, "_step": 2, "_wandb": {"runtime": 116}}

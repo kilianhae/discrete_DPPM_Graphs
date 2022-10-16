@@ -489,7 +489,7 @@ def train_main(config, args):
                            betas=(0.9, 0.999), eps=1e-8,
                            weight_decay=config.train.weight_decay)
 
-    wandb.login(key="c41e04df5bc64c8719064e73973311f58f030f3e")
+    wandb.login(key="")
     wandb.init(project="train_ppgn_consec_gridsearch", entity="khaefeli",config=config)
     sigma_list = len(config.train.sigmas)
     
