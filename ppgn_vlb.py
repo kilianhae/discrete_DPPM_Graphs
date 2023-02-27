@@ -33,7 +33,6 @@ def posterior(sigmatilde_t,sigma_t,sigmatilde_t1,x0,xt):
         return (1-sigmatilde_t1) * (1-sigma_t) / (1-sigmatilde_t)
     elif xt<0.01 and x0>0.99:
         return (1-sigmatilde_t1) * sigma_t / (sigmatilde_t)
-    
 
 
 #  Given the list of sigmas used, return a list of sigmas
