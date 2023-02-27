@@ -51,7 +51,6 @@ def plot_multi_channel_numpy_adjs(adjs, title='multi_channel_viz', save_dir=None
     channel_nums = [adj.shape[0] for adj in adjs]
     x_max = int(np.max(channel_nums))
     y_max = len(adjs)
-    #print(x_max, y_max)
     figure = plt.figure(figsize=(x_max * 2, y_max * 2))
     cardinal_g = nx.from_numpy_array(np.asarray(adjs[0][0] > 0.5, dtype=np.float))
     pos = nx.spring_layout(cardinal_g)
@@ -107,11 +106,8 @@ def plot_multi_channel_numpy_adjs_1b1(adjs, title='multi_channel_viz', save_dir=
     channel_nums = [adj.shape[0] for adj in adjs]
     x_max = int(np.max(channel_nums))
     y_max = len(adjs)
-    #print(x_max, y_max)
-
     a_min, a_max = -2.0, 2.0
     # adjs = np.clip(adjs, a_max=a_max, a_min=a_min)
-
     cardinal_g = nx.from_numpy_array(np.asarray(adjs[0][0] > 0.5, dtype=np.float))
     pos = nx.spring_layout(cardinal_g)
 
@@ -129,24 +125,19 @@ def plot_multi_channel_numpy_adjs_1b1(adjs, title='multi_channel_viz', save_dir=
             d_max = np.max(data)
             d_mean = np.mean(data)
             d_std = np.std(data)
-            # data_std = (data - d_min) / (d_max - d_min)
             data = (data - d_mean) / d_std
-
             g = nx.from_numpy_array(data)
-
             plt.figure(figsize=(12 / 4, 12 / 4))
-
             k = 0.4
             colors1 = plt.cm.Blues_r(np.linspace(0, 1 - k / 2, 128))
             colors5 = plt.cm.twilight_shifted(np.linspace(0. + k, 1 - k, 128))
             colors2 = plt.cm.Reds(np.linspace(k / 2, 1, 128))
 
-            # combine them and build a new colormap
+            # Combine them and build a new colormap
             colors = np.vstack((colors1, colors5, colors2))
             mymap = mcolors.LinearSegmentedColormap.from_list('my_colormap', colors)
 
             plt.pcolor(data, cmap=mymap, vmin=a_min, vmax=a_max)
-            #             plt.colorbar(ticks=[a_min, 0.0, a_max])
             plt.axis(False)
 
             save_fig(save_dir=save_dir, title=file_name + f'_l{layer_i}_c{channel_i}_m' + suffix, dpi=300,
@@ -154,7 +145,6 @@ def plot_multi_channel_numpy_adjs_1b1(adjs, title='multi_channel_viz', save_dir=
 
             def draw_a_graph(g, g_suffix='g'):
                 plt.figure(figsize=(12 / 4, 12 / 4))
-
                 pos = nx.spring_layout(g)
                 plt.axis('off')
                 # nodes
@@ -163,10 +153,8 @@ def plot_multi_channel_numpy_adjs_1b1(adjs, title='multi_channel_viz', save_dir=
                 e = []
                 for (u, v, d) in g.edges(data=True):
                     weight = d['weight']
-                    #                 print(weight)
                     e.append((u, v))
                     w.append(weight)
-
                 nx.draw_networkx_edges(g, pos, edgelist=e,
                                        edge_cmap=mymap, edge_color=w, edge_vmin=a_min,
                                        edge_vmax=a_max,
@@ -176,9 +164,7 @@ def plot_multi_channel_numpy_adjs_1b1(adjs, title='multi_channel_viz', save_dir=
                          fig_dir=fig_dir)
 
             draw_a_graph(g, g_suffix='g')
-
             comp_g = nx.from_numpy_array(- data)
-            # comp_g.remove_nodes_from(iso_nodes)
             draw_a_graph(comp_g, g_suffix='c')
 
 
@@ -215,15 +201,11 @@ def plot_curve(ax=None, data=None, title='energy', draw_std=False):
     else:
         infos = pd.DataFrame(infos, columns=['', title])
         infos.plot(0, [1], ax=ax, grid=True)
-    # ax.set_title(title)
 
 
 def plot_graphs_list(graphs, energy=None, node_energy_list=None, title='title', max_num=16, save_dir=None):
     batch_size = len(graphs)
-
-    #max_num = min(batch_size, max_num)
     max_num = 16
-    #img_c = int(np.sqrt(max_num))
     img_c = int(np.sqrt(max_num)) 
     figure = plt.figure()
 
@@ -239,12 +221,10 @@ def plot_graphs_list(graphs, energy=None, node_energy_list=None, title='title', 
         e = G.number_of_edges()
         v = G.number_of_nodes()
         l = nx.number_of_selfloops(G)
-
         ax = plt.subplot(img_c, img_c, i + 1)
         title_str = f'e={e - l}, n={v}'
         if energy is not None:
             title_str += f'\n en={energy[idx]:.1e}'
-
         if node_energy_list is not None:
             node_energy = node_energy_list[idx]
             title_str += f'\n {np.std(node_energy):.1e}'
@@ -255,31 +235,16 @@ def plot_graphs_list(graphs, energy=None, node_energy_list=None, title='title', 
             nx.draw(G, pos, with_labels=False, **options)
         ax.title.set_text(title_str)
     figure.suptitle(title)
-
     save_fig(save_dir=save_dir, title=title)
 
 
 def plot_inter_graphs(graphs,flags,title,save_dir,nr_to_analyze=0):
     torch.set_printoptions(profile="full")
     figure = plt.figure()
-    
-    
     max_num=len(graphs)
     img_c = int(np.sqrt(max_num))
     for i, sigmalevel_adjs in enumerate(graphs):
-        #print("w")
-        #print(len(sigmalevel_adjs))
-        #print("w")
         nodes=flags.sum(-1)
-        #print(nodes)
-        #print(i)
-        """
-        if i==0:
-            nrofnodes=nodes[nr_to_analyze]
-        else:"""
-        #nrofnodes=nodes[(i)*32+nr_to_analyze]
-
-        
         G = sigmalevel_adjs[nr_to_analyze].copy()
         G.remove_nodes_from(list(nx.isolates(G)))
         e = G.number_of_edges()
@@ -287,9 +252,6 @@ def plot_inter_graphs(graphs,flags,title,save_dir,nr_to_analyze=0):
         l = nx.number_of_selfloops(G)
         ax = plt.subplot(img_c+1, img_c+1, i+1)
         title_str = f'fl={"nrofnodes"},no={i}'
-
-        
-            # print(nx.get_node_attributes(G, 'feature'))
         pos = nx.spring_layout(G)
         nx.draw(G, pos, with_labels=False, **options)
         ax.title.set_text(title_str)
@@ -297,7 +259,6 @@ def plot_inter_graphs(graphs,flags,title,save_dir,nr_to_analyze=0):
         
     title=f'{title}-{nr_to_analyze}.pdf'
     figure.suptitle(title)
-
     save_fig(save_dir=save_dir, title=title)
 
 def plot_inter_graphs_jup(graphs,flags,title,save_dir,nr_to_analyze=0):
@@ -305,41 +266,23 @@ def plot_inter_graphs_jup(graphs,flags,title,save_dir,nr_to_analyze=0):
     graphs_proces=[]
     for g in graphs:
         graphs_proces.append(nx.from_numpy_matrix(g[0]))
-
     torch.set_printoptions(profile="full")
     figure = plt.figure(figsize=(25, 25))
     max_num=len(graphs)
     img_c = int(np.sqrt(max_num))
     pos=nx.spring_layout(graphs_proces[-1])
-    print(pos)
     for i, sigmalevel_adjs in enumerate(graphs_proces):
-        #plt.figure(figsize=(25, 25))
-        #print("w")
-        #print(len(sigmalevel_adjs))
-        #print("w")
         nodes=flags.sum(-1)
-        #print(nodes)
-        #print(i)
-        """
-        if i==0:
-            nrofnodes=nodes[nr_to_analyze]
-        else:"""
-        #nrofnodes=nodes[(i)*32+nr_to_analyze]
-
-        
         G = sigmalevel_adjs.copy()
         G.remove_nodes_from(list(nx.isolates(G)))
-        print(G.nodes)
         e = G.number_of_edges()
         v = G.number_of_nodes()
         l = nx.number_of_selfloops(G)
         ax = plt.subplot(img_c+1, img_c+1, i+1)
         title_str = f'fl={"nrofnodes"},no={i}'
-           
         nx.draw(G, pos, with_labels=False, **options)
         ax.title.set_text(title_str)
         plt.show()
-        
     title=f'{title}-{nr_to_analyze}.pdf'
     figure.suptitle(title)
     save_fig(save_dir=save_dir, title=title)
@@ -348,26 +291,11 @@ def plot_inter_graphs_jup(graphs,flags,title,save_dir,nr_to_analyze=0):
 def plot_inter_graphs_j(graphs,flags,title,save_dir,nr_to_analyze=0):
     torch.set_printoptions(profile="full")
     figure = plt.figure(figsize=(15, 15))
-    
-    
     max_num=len(graphs)
     img_c = int(np.sqrt(max_num))
     pos=nx.spring_layout(graphs[-1])
-    print(pos)
     for i, sigmalevel_adjs in enumerate(graphs):
-        #print("w")
-        #print(len(sigmalevel_adjs))
-        #print("w")
         nodes=flags.sum(-1)
-        #print(nodes)
-        #print(i)
-        """
-        if i==0:
-            nrofnodes=nodes[nr_to_analyze]
-        else:"""
-        #nrofnodes=nodes[(i)*32+nr_to_analyze]
-
-        
         G = sigmalevel_adjs[nr_to_analyze].copy()
         G.remove_nodes_from(list(nx.isolates(G)))
         e = G.number_of_edges()
@@ -379,21 +307,16 @@ def plot_inter_graphs_j(graphs,flags,title,save_dir,nr_to_analyze=0):
         nx.draw(G, pos, with_labels=False, **options)
         ax.title.set_text(title_str)
         plt.show()
-        
     title=f'{title}-{nr_to_analyze}.pdf'
     figure.suptitle(title)
-
     save_fig(save_dir=save_dir, title=title)
 
-##same as plot intergraphs but expects a list as an input to nrtoanalyze
+
+# Same as plot intergraphs but expects a list as an input to nrtoanalyze
 def plot_inter_graphs_list(graphs,flags,title,save_dir,nr_to_analyze=0):
-    #print(len(graphs))
-    #print("R")
     for i in nr_to_analyze:
         plot_inter_graphs(graphs,flags,title,save_dir,nr_to_analyze=i)
     return
-
-
 
 
 def plot_graphs_adj(adjs, energy=None, node_num=None, title='title', max_num=16, save_dir=None):
@@ -414,7 +337,6 @@ def plot_graphs_adj(adjs, energy=None, node_num=None, title='title', max_num=16,
         e = G.number_of_edges()
         v = G.number_of_nodes()
         l = nx.number_of_selfloops(G)
-
         ax = plt.subplot(img_c, img_c, i + 1)
         title_str = f'e={e - l}, n={v}'
         if energy is not None:
@@ -422,8 +344,4 @@ def plot_graphs_adj(adjs, energy=None, node_num=None, title='title', max_num=16,
         ax.title.set_text(title_str)
         nx.draw(G, with_labels=with_labels, **options)
     figure.suptitle(title)
-
     save_fig(save_dir=save_dir, title=title)
-
-
-    
