@@ -23,7 +23,7 @@ from matplotlib import pyplot as plt
 import wandb
 
 
-## calculate the value of p(x_t-1 | x_t, x_0)
+#  Calculate the value of p(x_t-1 | x_t, x_0)
 def posterior(sigmatilde_t,sigma_t,sigmatilde_t1,x0,xt):
     if xt<0.01 and x0<0.01:
         return sigmatilde_t1 * sigma_t / (1-sigmatilde_t)
@@ -36,7 +36,7 @@ def posterior(sigmatilde_t,sigma_t,sigmatilde_t1,x0,xt):
     
 
 
-## Given the list of sigmas used, return a list of sigmas 
+#  Given the list of sigmas used, return a list of sigmas
 def sigma_lin(sigma_list):
     sigmas=[]
     for g,sigma in enumerate(sigma_list):
@@ -47,7 +47,7 @@ def sigma_lin(sigma_list):
     return sigmas
 
 
-## a function for getting the loss compared to the training set (only used for the model selection)
+#  A function for getting the loss compared to the training set (only used for the model selection)
 def eval_loss(eval_set, num_levels, config, model):
     sigma_ind_list=np.array(range(1,num_levels[0]+1))
 
@@ -64,14 +64,13 @@ def eval_loss(eval_set, num_levels, config, model):
     sig_list = sigma_lin(sigma_line)
     sigma_nontild_list = [sig_list[i] for i in sigma_ind_list]
 
-    ##eval set is list of size 32 x 2 x tensor(n x n)
+    # Eval set is list of size 32 x 2 x tensor(n x n)
     loss=0.0
     for eval_adj_b, eval_x_b in eval_set:
         adjs=eval_adj_b.repeat(num_levels[0],1,1).to(config.dev)
-        print(adjs)
         xs=eval_x_b.repeat(num_levels[0],1,1).to(config.dev)
         flags = adjs.sum(-1).gt(1e-5).to(dtype=torch.float32).to(config.dev)
-        ##adjs now tensor of size num_levels x n x n
+        # adjs now tensor of size num_levels x n x n
         eval_x_b, eval_noise_adj_b, \
                 eval_node_flag_b, grad_log_q_noise_list = \
                 gen_list_of_data_single(xs, adjs,
@@ -98,14 +97,13 @@ def loss_func_kld(score_list, train_noise_adj_b, train_adj_b, grad_log_q_noise_l
     loss=0.0
     kl_loss = nn.KLDivLoss(reduction="none")
 
-    ##need to compute wether switch would go to on or to off (since model just predicts if we switched and not in which direction)
+    # Need to compute wether switch would go to on or to off (since model just predicts if we switched and not in which direction)
     for i,adj in enumerate(train_noise_adj_b):
         sigmatilde_t=sigma_list[i]
         sigma_t=sigma_nontild_list[i]
 
         sigmatilde_t1=sigma_list[i]-sigma_list[i]/sigma_ind_list[i]
-        ##now compute q which is the posterior on each matrix element but with knowing x0 and knowing xt which means we need both as arguments
-        ##xt
+        # Compute q which is the posterior on each matrix element but with knowing x0 and knowing xt which means we need both as arguments
         mult1=torch.where(train_noise_adj_b[i]>1/2,(1-sigma_t),sigma_t)
         mult2=torch.where(train_adj_b[i]>1/2,1-sigmatilde_t1,sigmatilde_t1)
         xor=torch.logical_xor(train_noise_adj_b[i], train_adj_b[i])
@@ -113,29 +111,27 @@ def loss_func_kld(score_list, train_noise_adj_b, train_adj_b, grad_log_q_noise_l
         q=mult1*mult2/div
         
 
-        ##now change score list based on if xt is 0 or 1 
-        print(score_list[i])
-        print(train_noise_adj_b[i])
+        # Change score list based on if xt is 0 or 1 
         score_i=torch.where(train_noise_adj_b[i]>1/2,1-torch.sigmoid(score_list[i]),torch.sigmoid(score_list[i]))
-        ##now score list represents p(x0|xt)
+        # score list represents p(x0|xt)
         
-        ##now calculate posterior(sigmatilde_t,sigma_t,sigmatilde_t1,0,xt)
+        # Calculate posterior(sigmatilde_t,sigma_t,sigmatilde_t1,0,xt)
         mult1=torch.where(train_noise_adj_b[i]>1/2,(1-sigma_t),sigma_t)
         mult2=torch.where(torch.zeros_like(train_adj_b[i])>1/2,1-sigmatilde_t1,sigmatilde_t1)
         xor=torch.logical_xor(train_noise_adj_b[i], torch.zeros_like(train_adj_b[i]))
         div=torch.where(xor>1/2,sigmatilde_t,1-sigmatilde_t)
         p = ( 1 - score_i ) * mult1*mult2/div
 
-        ##now calculate posterior(sigmatilde_t,sigma_t,sigmatilde_t1,1,xt)
+        # Calculate posterior(sigmatilde_t,sigma_t,sigmatilde_t1,1,xt)
         mult1=torch.where(train_noise_adj_b[i]>1/2,(1-sigma_t),sigma_t)
         mult2=torch.where(torch.ones_like(train_adj_b[i])>1/2,1-sigmatilde_t1,sigmatilde_t1)
         xor=torch.logical_xor(train_noise_adj_b[i], torch.ones_like(train_adj_b[i]))
         div=torch.where(xor>1/2,sigmatilde_t,1-sigmatilde_t)
         p += ( score_i ) * mult1 * mult2/div
 
-        ##p stands now for probablity p(x0=1|xt=xt)
+        # p stands for probablity p(x0=1|xt=xt) now
         score_list[i] = p
-        ##this should be q(x0=1|xt=xt,x0=x0)
+        # This q is q(x0=1|xt=xt,x0=x0)
         grad_log_q_noise_list[i] = q
 
         score_inv = 1-score_list[i]
@@ -147,7 +143,7 @@ def loss_func_kld(score_list, train_noise_adj_b, train_adj_b, grad_log_q_noise_l
         loss_matrix=loss_matrix.sum(-1)
         loss_matrix=(loss_matrix+torch.transpose(loss_matrix, -2, -1))/2
         loss_matrix=loss_matrix.to(config.dev) * mask[i].to(config.dev)
-        ##exclude the diagonal elements
+        # Exclude the diagonal elements
         loss_matrix = torch.triu(loss_matrix,diagonal=1) + torch.tril(loss_matrix,diagonal= -1)
         loss += loss_matrix.sum()
     return loss
@@ -161,24 +157,24 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
         eval_set=None
         ):
 
-        ## these parameters are set in order to do model selection based on the mmd and loss
+        # These parameters are set in order to do model selection based on the mmd and loss
         best_score=np.inf
         best_score_loss=np.inf
         best_score_loss_eval=np.inf
         best_epoch=0
         best_epoch_loss=0
         best_epoch_loss_eval=0
-        ##create a subdir for storing the selected models
+        # Create a subdir for storing the selected models
         os.system(f"mkdir {config.model_save_dir}/best")
         os.system(f"mkdir {config.model_save_dir}/bestloss")
         os.system(f"mkdir {config.model_save_dir}/bestloss_eval")
 
-        ##this is for storing the previous scores if we do not evaluate every epoch
+        # This is for storing the previous scores if we do not evaluate every epoch
         lastmmd={}
         for noisenum in config.num_levels:
             lastmmd[noisenum]={"degree": 0, "cluster": 0, "orbit": 0.0}
 
-        ##set optimizer to zero slope
+        # Set optimizer to zero slope
         optimizer.zero_grad()
         scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=config.train.lr_dacey)
         for epoch in range(max_epoch):
@@ -190,7 +186,7 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
 
             model.train()
             for train_adj_b, train_x_b in train_dl:
-                ####here sample the noiselevels randomly from th scheduled levels 
+                # Here sample the noiselevels randomly from th scheduled levels 
                 # sigma_ind_list is a list of random indexes which defines which noiselevel to use for which graph
                 sigma_ind_list = np.random.random_integers(low=1,high=config.num_levels[0],size=train_adj_b.size(0))
                 # sigma_line represents the linear distributed noiselevels (in paper equivalent to the Beta_tildes or Beta_overlines), so the noise from x0 to xt
@@ -211,7 +207,7 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
                 train_node_flag_b, grad_log_q_noise_list = \
                 gen_list_of_data_single(train_x_b, train_adj_b,
                                  train_node_flag_b, sigma_list, config)
-                ##now we have tensor of size B x N x N and grad_log_q_noise_list is list of B x Tensor( N x N )
+                # Now we have tensor of size B x N x N and grad_log_q_noise_list is list of B x Tensor( N x N )
 
                 optimizer.zero_grad()
 
@@ -230,16 +226,16 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
                 score=torch.cat(score,dim=0).squeeze(-1).to(config.dev)
                 masktens=torch.cat(masks,dim=0).to(config.dev)
 
-                ##compute ovarall loss for this epoch
+                # Compute loss for this epoch
                 loss = loss_func_kld(score, torch.stack(train_noise_adj_b_chunked), train_adj_b, torch.stack(grad_log_q_noise_list), sigma_list,sigma_ind_list,sigma_nontild_list, config, masktens)
 
-                ##take step on gradient descent
+                # Take step on gradient
                 loss.backward()
                 optimizer.step()
                 train_losses.append(loss.detach().cpu().item())
             scheduler.step(epoch)
             
-            ## do the same for test set to get testloss
+            # Do the same for test set to get testloss
             model.eval()
             for test_adj_b, test_x_b in test_dl:
                 test_adj_b = test_adj_b.to(config.dev)
@@ -284,7 +280,7 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
                 mean_test_loss_item = 0.0
                 mean_test_loss_item_str = 0.0
 
-            ## save te model at epoch eval_from
+            # Save the model at epoch eval_from
             if epoch == config.eval_from:
                 to_save = {
                     'model': model.state_dict(),
@@ -301,7 +297,7 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
                 torch.save(to_save, os.path.join(config.model_save_dir,
                                                     f"{config.dataset.name}.pth"))
 
-            ## store model in general every x iterations
+            # Store model in general every x iterations
             if epoch % save_interval == save_interval - 1:
                 to_save = {
                     'model': model.state_dict(),
@@ -318,7 +314,7 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
                 torch.save(to_save, os.path.join(config.model_save_dir,
                                                 f"{config.dataset.name}.pth"))
 
-            ## if conditions are met then evaluate the trainloss
+            # If conditions are met then evaluate the trainloss
             if mean_train_loss<best_score_loss:
                     best_epoch_loss = epoch
                     best_score_loss = mean_train_loss
@@ -337,7 +333,7 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
                     torch.save(to_save, os.path.join(config.model_save_dir,
                                                     f"bestloss/{config.dataset.name}.pth"))
             
-## if conditions are met then evaluate the eval_loss (which is similar to trainloss however taken over a set of graphs where each noisestep applied to every graph instead of randomly sampling 1 noiselevel per graph)
+            # If conditions are met then evaluate the eval_loss (which is similar to trainloss however taken over a set of graphs where each noisestep applied to every graph instead of randomly sampling 1 noiselevel per graph)
             if epoch % sample_interval == sample_interval - 1 and config.eval_from<epoch:
                 loss_eval=eval_loss(eval_set,config.num_levels,config,model)
                 if loss_eval<best_score_loss_eval:
@@ -369,15 +365,6 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
                         f'train loss i: {mean_train_loss_item_str} '
                         f'test loss i: {mean_test_loss_item_str} | ')
             
-            
-
-            logging.info(f'epoch: {epoch:03d}| time: {time.time() - t_start:.1f}s| '
-                        f'train loss: {mean_train_loss:+.3e} | '
-                        f'test loss: {mean_test_loss:+.3e} | ')
-
-            logging.info(f'epoch: {epoch:03d}| '
-                        f'train loss i: {mean_train_loss_item_str} '
-                        f'test loss i: {mean_test_loss_item_str} | ')
 
             
             
@@ -417,7 +404,6 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
                 wandb.log(wandb_dict)
 
 
-            #########################################################################################################
             try:      
                 if epoch%config.finalinterval==config.finalinterval-1 and config.eval_from<epoch:
                     with torch.no_grad():
@@ -426,7 +412,6 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
                         wandb_dict.update({f"degree_mmd_{num_noiselevel}_best": results["degree"],f"cluster_mmd_{num_noiselevel}_best": results["cluster"],f"orbit_mmd_{num_noiselevel}_best": results["orbit"],f"testloss_best": mean_test_loss})
                         wandb.log(wandb_dict)
             except Exception as e:
-                print("errorbest")
                 print(e)
 
             try:      
@@ -438,7 +423,6 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
                         logging.info(wandb_dict)
                         wandb.log(wandb_dict)
             except Exception as e:
-                print("errormain")
                 print(e)
 
             try:      
@@ -449,7 +433,6 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
                         wandb_dict.update({f"degree_mmd_{num_noiselevel}_bestloss": results["degree"],f"cluster_mmd_{num_noiselevel}_bestloss": results["cluster"],f"orbit_mmd_{num_noiselevel}_bestloss": results["orbit"],f"testloss_bestloss": best_score_loss})
                         wandb.log(wandb_dict)
             except Exception as e:
-                print("errorbestloss")
                 print(e)
 
             try:      
@@ -460,7 +443,6 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
                         wandb_dict.update({f"degree_mmd_{num_noiselevel}_bestloss_eval": results["degree"],f"cluster_mmd_{num_noiselevel}_bestloss_eval": results["cluster"],f"orbit_mmd_{num_noiselevel}_bestloss_eval": results["orbit"],f"train_bestloss_eval": best_score_loss_eval})
                         wandb.log(wandb_dict)
             except Exception as e:
-                print("erroreval")
                 print(e)
 
 
@@ -470,8 +452,8 @@ def train_main(config, args):
     config.train.sigmas=np.linspace(0,0.5,config.num_levels[0]+1).tolist()
     set_seed_and_logger(config, args)
     train_dl, test_dl = load_data(config)
-    #mc_sampler = get_mc_sampler(config)
-    # here, the `model` get `num_classes=len(sigma_list)`
+    # mc_sampler = get_mc_sampler(config)
+    # Here, the `model` get `num_classes=len(sigma_list)`
     model = get_score_model(config)
     param_strings = []
     max_string_len = 126
@@ -492,11 +474,10 @@ def train_main(config, args):
     wandb.login(key="")
     wandb.init(project="train_ppgn_consec_gridsearch", entity="khaefeli",config=config)
     sigma_list = len(config.train.sigmas)
-    
 
-    #### select 32 random from the dataloader 
+    # Select 32 random Graphs from the dataloader 
     train_graph_list, test_graph_list = load_data(config, get_graph_list=True)
-    #rand_idx = np.random.randint(0, len(train_graph_list), 32)
+    # rand_idx = np.random.randint(0, len(train_graph_list), 32)
     rand_idx = np.random.randint(0, len(train_graph_list), 64)
     eval_graph_list = [train_graph_list[i] for i in rand_idx]
     eval_adjs, eval_x = graphs_to_tensor(config, eval_graph_list)
@@ -521,5 +502,4 @@ if __name__ == "__main__":
     config_dict = edict(ori_config_dict.copy())
     process_config(config_dict)
     config_dict.model.name = "ppgn"
-    print(config_dict)
     train_main(config_dict, args)

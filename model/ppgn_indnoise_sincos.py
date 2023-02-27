@@ -9,50 +9,49 @@ SLOPE=0.01
 
 
 class PowerfulLayer(nn.Module):
-    ##in_feature will be given as hidden-dim and out as well hidden-dim
+    # in_feature will be given as hidden-dim and out as well hidden-dim
     def __init__(self, in_feat: int, out_feat: int, num_layers: int, activation=nn.LeakyReLU(negative_slope=SLOPE), spectral_norm=(lambda x: x)):
         super().__init__()
         self.in_feat = in_feat
         self.out_feat= out_feat
-        ##generate num_layers linear layers with the first one being of dim in_feat and all others out_feat, in between those layers we add an activation layer 
+        # Generate num_layers linear layers with the first one being of dim in_feat and all others out_feat, in between those layers we add an activation layer 
         self.m1 =  nn.Sequential(*[spectral_norm(nn.Linear(in_feat if i ==0 else out_feat, out_feat)) if i % 2 == 0 else activation for i in range(num_layers*2-1)])
         self.m2 =  nn.Sequential(*[spectral_norm(nn.Linear(in_feat if i ==0 else out_feat, out_feat)) if i % 2 == 0 else activation for i in range(num_layers*2-1)])
-        ##a linear layer that has input dim in_feat + out_feat and outputdim out_feat and a possible bias
-        ##this is mentioned in paper as the layer after each concatenbation back to outputdim
+        # A linear layer that has input dim in_feat + out_feat and outputdim out_feat and a possible bias
+        # This is mentioned in paper as the layer after each concatenbation back to outputdim
         self.m4 = nn.Sequential(spectral_norm(nn.Linear(in_feat + out_feat, out_feat, bias=True)))
 
-    ##expects x as batch x N x N x in_feat and mask as batch x N x N x 1
+    # Expects x as batch x N x N x in_feat and mask as batch x N x N x 1
     def forward(self, x, mask):
         """ x: batch x N x N x in_feat """
 
-        ##norm by taking uppermost col of mask gives nr of nodes active and then sqrt of that and put it in matching array dim
+        # Norm by taking uppermost col of mask gives nr of nodes active and then sqrt of that and put it in matching array dim
         norm = mask[:,0].squeeze(-1).float().sum(-1).sqrt().view(mask.size(0), 1, 1, 1)
 
-        ##here i will start to treat mask as in the edp paper, namely batch x N with then a boolean value
-        #batch * N * N * 1 gets to batch * 1 * N * N
+        # Here i will start to treat mask as in the edp paper, namely batch x N with then a boolean value
+        # batch * N * N * 1 gets to batch * 1 * N * N
         mask = mask.unsqueeze(1).squeeze(-1)
 
-        ##run the two mlp on input and permute dimensions so that now matches dim of mask: batch * N * N * out_features
+        # Run the two mlp on input and permute dimensions so that now matches dim of mask: batch * N * N * out_features
         out1 = self.m1(x).permute(0, 3, 1, 2) * mask           # batch, out_feat, N, N
         out2 = self.m2(x).permute(0, 3, 1, 2) * mask           # batch, out_feat, N, N
 
-        ##matrix multiply each matching layer of features as well as adjacencies
+        # Matrix multiply each matching layer of features as well as adjacencies
         out = out1 @ out2 
         del out1, out2
         out =  out / norm 
-        ##permute back to correct dim and concat with the skip-mlp in last dim
+        # Permute back to correct dim and concat with the skip-mlp in last dim
         out = torch.cat((out.permute(0, 2, 3, 1), x), dim=3) # batch, N, N, out_feat
         del x
-        ##run through last layer to go back to out_features dim
+        # Run through last layer to go back to out_features dim
         out = self.m4(out)
 
         return out
 
 
 
-##this is the class for the invariant layer that makes the whole thing invariant
+# This is a class for the invariant layer
 class FeatureExtractor(nn.Module):
-
     def __init__(self, in_features: int, out_features: int, activation=nn.LeakyReLU(negative_slope=SLOPE), spectral_norm=(lambda x: x)):
         super().__init__()
         self.lin1 = nn.Sequential(spectral_norm(nn.Linear(in_features, out_features, bias=True)))
@@ -65,20 +64,18 @@ class FeatureExtractor(nn.Module):
             output: (batch_size, out_features). """
         u = u * mask
 
-        ##tensor of batch * 1 that represernts nr of active nodes
+        # Tensor of batch * 1 that represernts nr of active nodes
         n = mask[:,0].sum(1)
-        ##tensor of batches * features * their diagonal elements (this retrieves the node elements that are stored on the diagonal)
+        # Tensor of batches * features * their diagonal elements (this retrieves the node elements that are stored on the diagonal)
         diag = u.diagonal(dim1=1, dim2=2)       # batch_size, channels, num_nodes
 
-        #tensor of batch * features with storing the sum of diagonals
+        # Tensor of batch * features with storing the sum of diagonals
         trace = torch.sum(diag, dim=2)
         del diag
 
-        ##run the first layer with input of batchsize * inputfeatures storing the summ of all diagonal features(a.k.a the node features) divided by norm
+        # Run the first layer with input of batchsize * inputfeatures storing the summ of all diagonal features(a.k.a the node features) divided by norm
         out1 = self.lin1.forward(trace / n)
 
-        ####didnt look whats happening here since its somehow different from paper as they do MPM
-        ####i think essence of it is that since they sum all nodes anyways so it kind of doesnt make a difference where which node is
         s = (torch.sum(u, dim=[1, 2]) - trace) / (n * (n-1))
         del trace
         out2 = self.lin2.forward(s)  # bs, out_feat
@@ -86,7 +83,7 @@ class FeatureExtractor(nn.Module):
         out = out1 + out2
         out = out + self.lin3.forward(self.activation(out))
 
-        ##returns output tensor of size batches * outfeatures
+        # Returns output tensor of size batches * outfeatures
         return out
         
 class SinusoidalPosEmb(nn.Module):
@@ -124,7 +121,7 @@ class Powerful_sincos(nn.Module):
         self.config=config
 
 
-        ###this is added by me for noiselevel conditioning
+        # This is added by me for noiselevel conditioning
         self.time_mlp = nn.Sequential(
                 SinusoidalPosEmb(hidden),
                 nn.Linear(hidden, 4*hidden),
@@ -134,11 +131,11 @@ class Powerful_sincos(nn.Module):
             )
 
 
-        ##one input layer to go from inputdim to hidden
-        #self.in_lin = nn.Sequential(spectral_norm(nn.Linear(input_features, hidden)))
+        # One input layer to go from inputdim to hidden
+        # self.in_lin = nn.Sequential(spectral_norm(nn.Linear(input_features, hidden)))
         self.in_lin = nn.Sequential(spectral_norm(nn.Linear(1, hidden)))
 
-        ##cat_output always true
+        # cat_output always true
         if self.cat_output:
             if self.project_first:
                 self.layer_cat_lin = nn.Sequential(spectral_norm(nn.Linear((hidden)*(num_layers+1), hidden)))
@@ -146,7 +143,7 @@ class Powerful_sincos(nn.Module):
                 self.layer_cat_lin = nn.Sequential(spectral_norm(nn.Linear((hidden)*num_layers+input_features, hidden)))
         self.convs = nn.ModuleList([])
         self.bns = nn.ModuleList([])
-        ##needs one conditional extra for befor the in_lin layer
+        # needs one conditional extra for befor the in_lin layer
         self.times = nn.ModuleList([nn.Sequential(spectral_norm(nn.Linear(hidden, 1)))])
         for i in range(num_layers):
             self.convs.append(PowerfulLayer(hidden, hidden, layers_per_conv, activation=self.activation, spectral_norm=spectral_norm))
@@ -175,88 +172,44 @@ class Powerful_sincos(nn.Module):
                     self.layer_cat_lin_node = nn.Sequential(spectral_norm(nn.Linear(hidden*num_layers+input_features, hidden)))
             if self.layer_after_conv:
                 self.after_conv_node = nn.Sequential(spectral_norm(nn.Linear(hidden_final, hidden_final)))
-            self.final_lin_node = nn.Sequential(spectral_norm(nn.Linear(hidden_final, node_output_features)))
+            self.final_lin_node = nn.Sequential(spectral_norm(nn.Linear(hidden_final, self.node_output_features)))
  
 
     def get_out_dim(self):
         return self.output_features
 
 
-    ##expects the input as the adjacency tensor: batchsize x N x N 
-    ##expects the node_features as tensor: batchsize x N x node_features
-    ##expects the mask as tensor: batchsize x N x N
-    ##expects noiselevel as the noislevel that was used as single float
+    # Expects the input as the adjacency tensor: batchsize x N x N 
+    # the node_features as tensor: batchsize x N x node_features
+    # the mask as tensor: batchsize x N x N
+    # noiselevel as the noislevel that was used as single float
     def forward(self, node_features, A, mask, noiselevel):
         out = self.forward_cat(A, node_features, mask, noiselevel)
-        # if self.cat_output:
-            # out = self.forward_cat(A, node_features, mask)
-        # else:
-            # out = self.forward_old(A, node_features, mask)
         return out
 
     def forward_cat(self, A, node_features, mask, noiselevel):
         mask = mask[..., None]
-        print(mask)
         if len(A.shape) < 4:
-            print(A)
             u = A[..., None]           # batch, N, N, 1
-            print("AAAAAAAAA")
-            print(u)
-            print(u.size())
-            #u=A
         else:
             u = A
 
-        ###condition the noise level, this implementation just runs it through a 1 layer mlp with gelu activation
-        ###attention here we always must ggo with noise_mlp=True
+        # Condition the noise level, this implementation just runs it through a 1 layer mlp with gelu activation
         if self.noise_mlp:
             noiselevel_tensor = torch.full([u.size(0)],noiselevel).to(self.config.dev)
-            print(noiselevel_tensor.size())
             noiselevel_tensor_prepro = self.time_mlp(noiselevel_tensor)
-            print(noiselevel_tensor_prepro.size())
 
-            ##now size batchsize x hidden
-
-            """
-            noiselevel=self.time_mlp(torch.full([1],noiselevel).to(self.config.dev))
-            noiselevel_in = self.times[0](noiselevel)
-            noise_level_matrix=noiselevel_in.expand(u.size(0),u.size(1),u.size(3)).to(self.config.dev)
-            noise_level_matrix=torch.diag_embed(noise_level_matrix.transpose(-2,-1), dim1=1, dim2=2)
-            #noise_level_matrix=noiselevel.expand(u.size(0),u.size(1),u.size(2),u.size(3)).to(self.config.dev)"""
-        """
-        else:
-            noiselevel=torch.full([1],noiselevel).to(self.config.dev)
-            noise_level_matrix=noiselevel.expand(u.size(0),u.size(1),u.size(3)).to(self.config.dev)
-            noise_level_matrix=torch.diag_embed(noise_level_matrix.transpose(-2,-1), dim1=1, dim2=2)"""
-
-
-        
-        ####this would be the line if we did use the initial node features but in a random noise case maybe not necessary, otherwise the dim of features is 18
-        #u = torch.cat([u, torch.diag_embed(node_features.transpose(-2,-1), dim1=1, dim2=2),noise_level_matrix], dim=-1).to(self.config.dev)
-        #u = torch.cat([u,noise_level_matrix], dim=-1).to(self.config.dev)
-
-        ##add noise to input adjacency for in_lin layer of dim =1
         noiselevel_in = self.times[0](noiselevel_tensor_prepro)
-        print(noiselevel_in.size())
         noiselevel_in = self.activation(noiselevel_in)
         noiselevel_in=torch.unsqueeze(noiselevel_in,1).to(self.config.dev)
         noiselevel_in=torch.unsqueeze(noiselevel_in,1).to(self.config.dev)
         noise_level_matrix=noiselevel_in.expand(u.size(0),u.size(1),u.size(2),u.size(3)).to(self.config.dev)
         u = u + noise_level_matrix
-
         del node_features
-        print(u)
-        # if edge_features is not None:
-        #     u[:,:,:,-edge_features.size(-1):][:, ~torch.eye(mask.size(1), dtype=torch.bool)] = edge_features
-        # del edge_features
-        print(mask)
-        #u = u * mask
         if self.project_first:
-            print(u.size())
             u = self.in_lin(u)
             out = [u]
         else:
-            print(u.size())
             out = [u]
             u = self.in_lin(u)
 
@@ -264,8 +217,8 @@ class Powerful_sincos(nn.Module):
         for conv, extractor, bn in zip(self.convs, self.feature_extractors, self.bns):
             noiselevel_in = self.times[noisecounter](noiselevel_tensor_prepro)
             noiselevel_in = self.activation(noiselevel_in)
-            ##now noiselevel_i is a tensor of form batchsize x hidden or batchsize x 1 before first layer
-            #now expand to batchsize x N x N x hidden or ... x 1 so that we can then bring it to
+            # Now noiselevel_i is a tensor of form batchsize x hidden or batchsize x 1 before first layer
+            # Now expand to batchsize x N x N x hidden or ... x 1 so that we can then bring it to
             noiselevel_in=torch.unsqueeze(noiselevel_in,1).to(self.config.dev)
             noiselevel_in=torch.unsqueeze(noiselevel_in,1).to(self.config.dev)
             noise_level_matrix=noiselevel_in.expand(u.size(0),u.size(1),u.size(2),u.size(3)).to(self.config.dev)
@@ -277,7 +230,6 @@ class Powerful_sincos(nn.Module):
             elif self.normalization == 'instance':
                 u = masked_instance_norm2D(u, mask)
             elif self.normalization == 'layer':
-                # u = bn(u)
                 u = masked_layer_norm2D(u, mask)
             elif self.normalization == 'batch':
                 u = bn(u.permute(0, 3, 1, 2)).permute(0, 2, 3, 1)
