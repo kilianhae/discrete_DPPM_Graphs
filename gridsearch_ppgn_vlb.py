@@ -27,7 +27,7 @@ batchsizes = [64]
 # Chose model name (default is ppgn for normal ppgn implementation)
 modelname = "ppgn"
 
-# choose random seeds to use
+# Choose random seeds to use
 seeds = [1234]
 
 # LEAVE THESE VALUES as these are deprecated and some functionality may produce an error if changed

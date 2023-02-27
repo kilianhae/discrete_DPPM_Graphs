@@ -43,9 +43,7 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
 
     # These parameters are set in order to do model selection based on the mmd and loss
     best_score = np.inf
-    best_epoch = 0
     best_loss = np.inf
-    best_epochloss = 0
     # Create a subdir for storing the selected models
     os.system(f"mkdir {config.model_save_dir}/best")
     os.system(f"mkdir {config.model_save_dir}/bestloss")
@@ -144,6 +142,7 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
                      f'train loss i: {mean_train_loss_item_str} '
                      f'test loss i: {mean_test_loss_item_str} | ')
 
+        # Save model
         if epoch % save_interval == save_interval - 1:
             to_save = {
                 'model': model.state_dict(),
@@ -158,8 +157,8 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
             torch.save(to_save, os.path.join(config.model_save_dir,
                                              f"{config.dataset.name}.pth"))
 
+        # Save model with best loss on train dataset
         if mean_train_loss < best_loss:
-            best_epochloss = epoch
             best_score = mean_train_loss
             to_save = {
                 'model': model.state_dict(),
@@ -179,17 +178,14 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
             with torch.no_grad():
                 wandb_dict = {}
                 for num_noiselevel in config.num_levels:
-                    results = sample_testing_edp(
-                        config, f"{config.model_save_dir}", epoch, num_noiselevel, train_dl)
+                    results = sample_testing_edp(config, f"{config.model_save_dir}", epoch, num_noiselevel, train_dl)
                     wandb_dict.update({f"degree_mmd_{num_noiselevel}": results["degree"], f"cluster_mmd_{num_noiselevel}": results["cluster"],
-                                      f"orbit_mmd_{num_noiselevel}": results["orbit"], f"trainloss": mean_train_loss, f"testloss": mean_test_loss})
+                                      f"orbit_mmd_{num_noiselevel}": results["orbit"], "trainloss": mean_train_loss, "testloss": mean_test_loss})
                     lastmmd[num_noiselevel] = results
                 wandb.log(wandb_dict)
 
             if sum([results[key] if "likelyhood" not in key else 1-results[key] for key in results.keys()]) < best_score:
-                best_epoch = epoch
-                best_score = sum(
-                    [results[key] if "likelyhood" not in key else 1-results[key] for key in results.keys()])
+                best_score = sum([results[key] if "likelyhood" not in key else 1-results[key] for key in results.keys()])
                 to_save = {
                     'model': model.state_dict(),
                     'sigma_list': sigma_list,
@@ -204,14 +200,9 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
                                                  f"best/{config.dataset.name}.pth"))
         else:
             wandb_dict = {}
-            try:
-                for num_noiselevel in config.num_levels:
-                    wandb_dict.update({f"degree_mmd_{num_noiselevel}": lastmmd[num_noiselevel]["degree"], f"cluster_mmd_{num_noiselevel}": lastmmd[num_noiselevel]["cluster"], f"orbit_mmd_{num_noiselevel}": lastmmd[
-                                      num_noiselevel]["orbit"], f"likelyhood_{num_noiselevel}": lastmmd[num_noiselevel]["likelyhood"], "trainloss": mean_train_loss, "testloss": mean_test_loss})
-            except:
-                for num_noiselevel in config.num_levels:
-                    wandb_dict.update({f"degree_mmd_{num_noiselevel}": lastmmd[num_noiselevel]["degree"], f"cluster_mmd_{num_noiselevel}": lastmmd[num_noiselevel][
-                                      "cluster"], f"orbit_mmd_{num_noiselevel}": lastmmd[num_noiselevel]["orbit"], "trainloss": mean_train_loss, "testloss": mean_test_loss})
+            for num_noiselevel in config.num_levels:
+                wandb_dict.update({f"degree_mmd_{num_noiselevel}": lastmmd[num_noiselevel]["degree"], f"cluster_mmd_{num_noiselevel}": lastmmd[num_noiselevel]["cluster"], f"orbit_mmd_{num_noiselevel}": lastmmd[
+                                  num_noiselevel]["orbit"], "trainloss": mean_train_loss, "testloss": mean_test_loss})
             wandb.log(wandb_dict)
 
         # If conditions are met then evaluate the MMD score compared to the test set using the model selected based on th best mmd score
