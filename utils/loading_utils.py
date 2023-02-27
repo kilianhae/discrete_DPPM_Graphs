@@ -213,15 +213,9 @@ def eval_sample_batch(sample_b, test_adj_b, init_adjs, save_dir, title=""):
 def prepare_test_model(config):
     models = []
     if len(config.model_files) == 0:
-        #print(config.model_save_dir)
         config.model_files = os.listdir(config.model_save_dir)
-    #print('config.model_files:', config.model_files)
     for file in config.model_files:
         ckp = torch.load(os.path.join(config.model_save_dir, file), map_location=config.dev)
-        # if ckp['sigma_list'] not in config.train.sigmas:
-        #     print(ckp['sigma_list'], config.train.sigmas)
-        #     continue
-
         models.append((file, ckp['sigma_list'], [ckp, config.dev]))
     models.sort(key=lambda x: x[1], reverse=True)  # large sigma_list -> small sigma_list
     return models
@@ -229,20 +223,12 @@ def prepare_test_model(config):
 def prepare_test_model_train(config,save_dir):
     models = []
     config.model_files = os.listdir(save_dir)
-    #print('config.model_files:', config.model_files)
     for file in config.model_files:
-        print(3)
         try:
             ckp = torch.load(os.path.join(save_dir, file), map_location=config.dev)
-            print(2)
             models.append((file, ckp['sigma_list'], [ckp, config.dev]))
         except Exception as e:
             print(e)
-            print(22)
-        # if ckp['sigma_list'] not in config.train.sigmas:
-        #     print(ckp['sigma_list'], config.train.sigmas)
-        #     continue
-
-        
+            continue
     models.sort(key=lambda x: x[1], reverse=True)  # large sigma_list -> small sigma_list
     return models

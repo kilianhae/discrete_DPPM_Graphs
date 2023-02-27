@@ -37,12 +37,10 @@ def parse_arguments(default_config="train.yaml"):
     parser.add_argument('-m', '--comment', type=str,
                         default="", help="A single line comment for the experiment")
     args = parser.parse_args()
-    #print(args)s
     return args
 
 
 def get_config(args):
-    #print(args)
     """ Construct and snapshot hyper parameters """
     config = edict(yaml.load(open(args.config_file, 'r'), Loader=yaml.FullLoader))
     process_config(config, comment=args.comment)
