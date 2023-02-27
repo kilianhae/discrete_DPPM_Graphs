@@ -39,11 +39,11 @@ noisetypes = ["switched"]
 
 # This creates new directories for the configs of our runs, for the slurm_job numbers, for the slurm_scripts to run based on the model parameters chosen and based on the timestamp
 testdir = f"consec_edp_{datetime.datetime.now().day}.{datetime.datetime.now().month}_{datetime.datetime.now().hour}:{datetime.datetime.now().minute}"
-os.system(f"mkdir config/gridsearch/{testdir}")
-os.system(f"mkdir scripts/gridsearch/{testdir}")
-os.system(f"mkdir gridsearch/{testdir}")
+os.system(f"mkdir ../config/gridsearch/{testdir}")
+os.system(f"mkdir ../scripts/gridsearch/{testdir}")
+os.system(f"mkdir ../gridsearch/{testdir}")
 
-with open('config/gridsearch_edp_final.yaml') as f:
+with open('../config/gridsearch_edp_final.yaml') as f:
     data_base = yaml.load(f,Loader=yaml.FullLoader)
     for batchsize, dataset, networksize, noisetype, weighted_loss, seed in itertools.product(batchsizes, datasets, networksizes, noisetypes, weighted_losses,seeds):
         data = copy.copy(data_base)
@@ -62,11 +62,11 @@ with open('config/gridsearch_edp_final.yaml') as f:
         data["seed"] = seed
         data["train"]["sigmas"] = np.linspace(0,0.5,noise_nums[0]+1).tolist()
         data["model"]["models"]["model_1"]["name"] = "gin"
-        with open(f'config/gridsearch/{testdir}/gridsearch_edp_consec_{dataset}_{networksize[0]},{networksize[1]}_{len(noise_nums)}_{batchsize}_{noisetype}_{weighted_loss}_{seed}.yaml',"w+") as g:
+        with open(f'../config/gridsearch/{testdir}/gridsearch_edp_consec_{dataset}_{networksize[0]},{networksize[1]}_{len(noise_nums)}_{batchsize}_{noisetype}_{weighted_loss}_{seed}.yaml',"w+") as g:
             yaml.dump(data, g)
         commandstring = f"python3 edp_simple.py -c config/gridsearch/{testdir}/gridsearch_edp_consec_{dataset}_{networksize[0]},{networksize[1]}_{len(noise_nums)}_{batchsize}_{noisetype}_{weighted_loss}_{seed}.yaml"
 
-        with open('scripts/gridsearch.sh','r') as firstfile, open(f"scripts/gridsearch/{testdir}/gridsearch_edp_consec_{dataset}_{networksize[0]},{networksize[1]}_{len(noise_nums)}_{batchsize}_{noisetype}_{weighted_loss}_{seed}.sh",'a+') as secondfile:
+        with open('../scripts/gridsearch.sh','r') as firstfile, open(f"../scripts/gridsearch/{testdir}/gridsearch_edp_consec_{dataset}_{networksize[0]},{networksize[1]}_{len(noise_nums)}_{batchsize}_{noisetype}_{weighted_loss}_{seed}.sh",'a+') as secondfile:
             for line in firstfile:
                 secondfile.write(line)
             secondfile.write(f'{commandstring}\n')
@@ -76,7 +76,7 @@ with open('config/gridsearch_edp_final.yaml') as f:
         out = subprocess.check_output(f"sbatch scripts/gridsearch/{testdir}/gridsearch_edp_consec_{dataset}_{networksize[0]},{networksize[1]}_{len(noise_nums)}_{batchsize}_{noisetype}_{weighted_loss}_{seed}.sh",shell=True)
         index = str(out).find("\n")
         jobnumber = int(out[index-6:index])
-        with open(f"gridsearch/{testdir}/gridsearch_edp_consec_{dataset}_{networksize[0]},{networksize[1]}_{len(noise_nums)}_{batchsize}_{noisetype}_{weighted_loss}_{seed}.txt","w+") as idfile:
+        with open(f"../gridsearch/{testdir}/gridsearch_edp_consec_{dataset}_{networksize[0]},{networksize[1]}_{len(noise_nums)}_{batchsize}_{noisetype}_{weighted_loss}_{seed}.txt","w+") as idfile:
             idfile.write(f"{jobnumber}")
                                 
 
