@@ -99,48 +99,17 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
 
         scheduler.step(epoch)
 
-        # The part that is commented out might not be working with the newest edp model
+        # Here testloss might get added later
         model.eval()
-        """
-            for test_adj_b, test_x_b in test_dl:
-                test_adj_b = test_adj_b.to(config.dev)
-                test_x_b = test_x_b.to(config.dev)
-                test_node_flag_b = test_adj_b.sum(-1).gt(1e-5).to(dtype=torch.float32)
-                test_x_b, test_noise_adj_b, test_node_flag_b, grad_log_q_noise_list = \
-                    gen_list_of_data(test_x_b, test_adj_b,
-                                    test_node_flag_b, sigma_list,config=config)
-                with torch.no_grad():
-                    score = model(x=test_x_b, adjs=test_noise_adj_b,
-                                node_flags=test_node_flag_b)
-                loss = loss_func_bce(score.chunk(len(sigma_list), dim=0), grad_log_q_noise_list, sigma_list)
-                #test_loss_items.append(loss_items)
-                test_losses.append(loss.detach().cpu().item())"""
-
-        try:
-            mean_train_loss = np.mean(train_losses)
-            mean_test_loss = np.mean(test_losses)
-            mean_train_loss_item = np.mean(train_loss_items, axis=0)
-            mean_train_loss_item_str = np.array2string(
-                mean_train_loss_item, precision=2, separator="\t", prefix="\t")
-            mean_test_loss_item = np.mean(test_loss_items, axis=0)
-            mean_test_loss_item_str = np.array2string(
-                mean_test_loss_item, precision=2, separator="\t", prefix="\t")
-        except:
-            mean_train_loss = np.mean(train_losses)
-            mean_train_loss_item = np.mean(train_loss_items, axis=0)
-            mean_train_loss_item_str = np.array2string(
-                mean_train_loss_item, precision=2, separator="\t", prefix="\t")
-            mean_test_loss_item = 0
-            mean_test_loss_item_str = 0
-            mean_test_loss = 0
+        mean_train_loss = np.mean(train_losses)
+        mean_train_loss_item = np.mean(train_loss_items, axis=0)
+        mean_train_loss_item_str = np.array2string(mean_train_loss_item, precision=2, separator="\t", prefix="\t")
 
         logging.info(f'epoch: {epoch:03d}| time: {time.time() - t_start:.1f}s| '
-                     f'train loss: {mean_train_loss:+.3e} | '
-                     f'test loss: {mean_test_loss:+.3e} | ')
+                     f'train loss: {mean_train_loss:+.3e} | ')
 
         logging.info(f'epoch: {epoch:03d}| '
-                     f'train loss i: {mean_train_loss_item_str} '
-                     f'test loss i: {mean_test_loss_item_str} | ')
+                     f'train loss i: {mean_train_loss_item_str} ')
 
         # Save model
         if epoch % save_interval == save_interval - 1:
@@ -150,9 +119,9 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
                 'config': edict2dict(config),
                 'epoch': epoch,
                 'train_loss': mean_train_loss,
-                'test_loss': mean_test_loss,
+                'test_loss': 0,
                 'train_loss_item': mean_train_loss_item,
-                'test_loss_item': mean_test_loss_item,
+                'test_loss_item': 0,
             }
             torch.save(to_save, os.path.join(config.model_save_dir,
                                              f"{config.dataset.name}.pth"))
@@ -166,9 +135,9 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
                 'config': edict2dict(config),
                 'epoch': epoch,
                 'train_loss': best_score,
-                'test_loss': mean_test_loss,
+                'test_loss': 0,
                 'train_loss_item': mean_train_loss_item,
-                'test_loss_item': mean_test_loss_item,
+                'test_loss_item': 0,
             }
             torch.save(to_save, os.path.join(config.model_save_dir,
                                              f"bestloss/{config.dataset.name}.pth"))
@@ -180,9 +149,10 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
                 for num_noiselevel in config.num_levels:
                     results = sample_testing_edp(config, f"{config.model_save_dir}", epoch, num_noiselevel, train_dl)
                     wandb_dict.update({f"degree_mmd_{num_noiselevel}": results["degree"], f"cluster_mmd_{num_noiselevel}": results["cluster"],
-                                      f"orbit_mmd_{num_noiselevel}": results["orbit"], "trainloss": mean_train_loss, "testloss": mean_test_loss})
+                                      f"orbit_mmd_{num_noiselevel}": results["orbit"], "trainloss": mean_train_loss, "testloss": 0})
                     lastmmd[num_noiselevel] = results
-                wandb.log(wandb_dict)
+                #wandb.log(wandb_dict)
+                logging.info(wandb_dict)
 
             if sum([results[key] if "likelyhood" not in key else 1-results[key] for key in results.keys()]) < best_score:
                 best_score = sum([results[key] if "likelyhood" not in key else 1-results[key] for key in results.keys()])
@@ -192,9 +162,9 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
                     'config': edict2dict(config),
                     'epoch': epoch,
                     'train_loss': best_score,
-                    'test_loss': mean_test_loss,
+                    'test_loss': 0,
                     'train_loss_item': mean_train_loss_item,
-                    'test_loss_item': mean_test_loss_item,
+                    'test_loss_item': 0,
                 }
                 torch.save(to_save, os.path.join(config.model_save_dir,
                                                  f"best/{config.dataset.name}.pth"))
@@ -202,48 +172,36 @@ def fit(model, optimizer, mcmc_sampler, train_dl, max_node_number, max_epoch=20,
             wandb_dict = {}
             for num_noiselevel in config.num_levels:
                 wandb_dict.update({f"degree_mmd_{num_noiselevel}": lastmmd[num_noiselevel]["degree"], f"cluster_mmd_{num_noiselevel}": lastmmd[num_noiselevel]["cluster"], f"orbit_mmd_{num_noiselevel}": lastmmd[
-                                  num_noiselevel]["orbit"], "trainloss": mean_train_loss, "testloss": mean_test_loss})
-            wandb.log(wandb_dict)
+                                  num_noiselevel]["orbit"], "trainloss": mean_train_loss, "testloss": 0})
+            #wandb.log(wandb_dict)
+            logging.info(wandb_dict)
 
-        # If conditions are met then evaluate the MMD score compared to the test set using the model selected based on th best mmd score
-        try:
-            if epoch % config.finalinterval == config.finalinterval-1 and config.eval_from < epoch:
-                with torch.no_grad():
-                    wandb_dict = {}
-                    results = sample_main_edp(
-                        config, f"{config.model_save_dir}/best", epoch, num_noiselevel)
-                    wandb_dict.update({f"degree_mmd_{num_noiselevel}_best": results["degree"], f"cluster_mmd_{num_noiselevel}_best": results[
-                                      "cluster"], f"orbit_mmd_{num_noiselevel}_best": results["orbit"], f"testloss_best": best_score})
-                    wandb.log(wandb_dict)
-        except:
-            print("error")
 
-        # If conditions are met then evaluate the MMD score compared to the test set using the model selected based on the best trainloss
-        try:
-            if epoch % config.finalinterval == config.finalinterval-1 and config.eval_from < epoch:
-                with torch.no_grad():
-                    wandb_dict = {}
-                    results = sample_main_edp(
-                        config, f"{config.model_save_dir}/bestloss", epoch, num_noiselevel)
-                    wandb_dict.update({f"degree_mmd_{num_noiselevel}_bestloss": results["degree"], f"cluster_mmd_{num_noiselevel}_bestloss": results[
-                                      "cluster"], f"orbit_mmd_{num_noiselevel}_bestloss": results["orbit"], f"testloss_bestloss": best_score})
-                    wandb.log(wandb_dict)
-        except:
-            print("error")
+        if epoch % config.finalinterval == config.finalinterval-1 and config.eval_from < epoch:
+            with torch.no_grad():
+                # Evaluate the MMD score compared to the test set using the model selected based on th best mmd score
+                wandb_dict = {}
+                results = sample_main_edp(
+                    config, f"{config.model_save_dir}/best", epoch, num_noiselevel)
+                wandb_dict.update({f"degree_mmd_{num_noiselevel}_best": results["degree"], f"cluster_mmd_{num_noiselevel}_best": results[
+                                  "cluster"], f"orbit_mmd_{num_noiselevel}_best": results["orbit"], "testloss_best": best_score})
+                #wandb.log(wandb_dict)
+                logging.info(f"MMD of Epoch {epoch} with modelselection based on mmd performance: {wandb_dict}")
 
-        # If conditions are met then evaluate the MMD score compared to the test set using the current model
-        try:
-            if epoch % config.finalinterval == config.finalinterval-1:
-                with torch.no_grad():
-                    wandb_dict = {}
-                    results = sample_main_edp(
-                        config, f"{config.model_save_dir}", epoch, num_noiselevel)
-                    wandb_dict.update({f"degree_mmd_{num_noiselevel}_main": results["degree"], f"cluster_mmd_{num_noiselevel}_main": results[
-                                      "cluster"], f"orbit_mmd_{num_noiselevel}_main": results["orbit"], f"testloss": best_score})
-                    logging.info(wandb_dict)
-                    wandb.log(wandb_dict)
-        except:
-            print("error")
+                # Evaluate the MMD score compared to the test set using the model selected based on th best mmd score
+                results = sample_main_edp(
+                    config, f"{config.model_save_dir}/bestloss", epoch, num_noiselevel)
+                wandb_dict.update({f"degree_mmd_{num_noiselevel}_bestloss": results["degree"], f"cluster_mmd_{num_noiselevel}_bestloss": results[
+                                  "cluster"], f"orbit_mmd_{num_noiselevel}_bestloss": results["orbit"], "testloss_bestloss": best_score})
+                #wandb.log(wandb_dict)
+                logging.info(f"MMD of Epoch {epoch} with modelselection based on trainloss: {wandb_dict}")
+
+                results = sample_main_edp(
+                    config, f"{config.model_save_dir}", epoch, num_noiselevel)
+                wandb_dict.update({f"degree_mmd_{num_noiselevel}_main": results["degree"], f"cluster_mmd_{num_noiselevel}_main": results[
+                                  "cluster"], f"orbit_mmd_{num_noiselevel}_main": results["orbit"], "testloss": best_score})
+                #wandb.log(wandb_dict)
+                logging.info(f"MMD of Epoch {epoch} without modelselection: {wandb_dict}")
 
 
 def train_main(config, args):
@@ -279,8 +237,8 @@ def train_main(config, args):
     sigma_list = sigma_tens.tolist()
     sigma_list.sort()
 
-    wandb.login(key="c41e04df5bc64c8719064e73973311f58f030f3e")
-    wandb.init(project="my-test-project", entity="kahefeli")
+    #wandb.login(key="")
+    #wandb.init(project="", entity="")
 
     fit(model, optimizer, None, train_dl,
         max_node_number=config.dataset.max_node_num,
